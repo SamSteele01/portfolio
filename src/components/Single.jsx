@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+// import placeholder from '../styles/responsive-design-dark-blue.png';
 
 export default class Single extends Component {
   constructor(props) {
@@ -10,11 +11,17 @@ export default class Single extends Component {
   }
 
   render() {
+    let picture = "";
+    if(this.props.image){
+      picture = this.props.image;
+    }else{
+      picture = this.props.placeholder;
+    }
     return (
       <div className="single">
         <h3>Single Project</h3>
         <div className="flex-row">
-          <img src={this.props.image} alt="" className="single-image"/>
+          <img src={picture} alt="Video screenshot" className="single-image"/>
           <p>{this.props.text}</p>
         </div>
       </div>
