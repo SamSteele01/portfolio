@@ -19,7 +19,7 @@ export default class Single extends Component {
     }
     return (
       <div className="single">
-        <h3>Single Project</h3>
+        <h3>{this.props.title}</h3>
         <div className="flex-row">
           <img src={picture} alt="Video screenshot" className="single-image"/>
           <p>{this.props.text}</p>

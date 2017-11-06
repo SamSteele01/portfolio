@@ -5,7 +5,7 @@ export default class Hero extends Component {
   render() {
     return (
       <div className="hero">
-        <img src={heroImg} className="hero-img" alt="hero" />
+        {/* <img src={heroImg} className="hero-img" alt="hero" /> */}
       </div>
     );
   }
