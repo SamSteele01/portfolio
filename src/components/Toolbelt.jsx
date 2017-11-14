@@ -7,8 +7,8 @@ export default class Toolbelt extends Component {
 
   render() {
     return (
-      <div>
-        MyComponent
+      <div className="toolbelt">
+        <h2>Toolbelt!</h2>
       </div>
     );
   }

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 // import placeholder from '../styles/responsive-design-dark-blue.png';
 
 export default class Single extends Component {
@@ -22,7 +22,7 @@ export default class Single extends Component {
         <h3>{this.props.title}</h3>
         <div className="flex-row">
           <img src={picture} alt="Video screenshot" className="single-image"/>
-          <p>{this.props.text}</p>
+          <textarea >{this.props.text}</textarea>
         </div>
       </div>
     );
@@ -30,4 +30,8 @@ export default class Single extends Component {
 }
 
 Single.propTypes = {
+  // title:
+  // image:
+  // placeholder:
+  // text:
 };

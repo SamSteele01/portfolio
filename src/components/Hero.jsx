@@ -3,8 +3,14 @@ import heroImg from '../styles/html-code-screen.png'
 
 export default class Hero extends Component {
   render() {
+
+    const {
+      color,
+      isActive,
+    } = this.props
+
     return (
-      <div className="hero">
+      <div className="hero-img hero1">
         {/* <img src={heroImg} className="hero-img" alt="hero" /> */}
       </div>
     );
@@ -12,4 +18,5 @@ export default class Hero extends Component {
 }
 
 Hero.propTypes = {
+  // imagePath:
 };
