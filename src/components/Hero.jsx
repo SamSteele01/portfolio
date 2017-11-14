@@ -5,13 +5,13 @@ export default class Hero extends Component {
   render() {
 
     const {
-      color,
-      isActive,
+      text,
+      imageClassName,
     } = this.props
 
     return (
-      <div className="hero-img hero1">
-        {/* <img src={heroImg} className="hero-img" alt="hero" /> */}
+      <div className={`hero-img ${imageClassName}`}>
+        <p>{text}</p>
       </div>
     );
   }

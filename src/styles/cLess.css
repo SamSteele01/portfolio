@@ -10,7 +10,7 @@
   background-color: #222c35;
   height: 75px;
   width: 100%;
-  /*margin-top: -75px;*/
+  margin-top: -18px;
   /*padding: 20px;*/
   position: fixed;
   color: white;
@@ -26,7 +26,7 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }*/
-.hero1 {
+.heroImg1 {
   background-image: url('html-code-screen.png');
 }
 .hero2 {
@@ -59,7 +59,7 @@
   /*margin: 0;*/
 }
 .project {
-  padding: 3vw;
+  /*padding: 3vw;*/
   z-index: 3;
 }
 .single-image {
