@@ -49,9 +49,10 @@
   border-bottom: 1px solid blue;
 }
 .single {
-  height: 32vw;
+  height: auto;
   background-attachment: scroll;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
   border-bottom: 1px solid blue;
 }
 .single h3 {

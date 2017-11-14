@@ -21,7 +21,7 @@ export default class Single extends Component {
       <div className="single">
         <h3>{this.props.title}</h3>
         <div className="flex-row">
-          <img src={picture} alt="Video screenshot" className="single-image"/>
+          <a href={this.props.link} ><img src={picture} alt="Video screenshot" className="single-image"/></a>
           <textarea >{this.props.text}</textarea>
         </div>
       </div>
