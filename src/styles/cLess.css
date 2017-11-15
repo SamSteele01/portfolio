@@ -10,11 +10,11 @@
   background-color: #222c35;
   height: 75px;
   width: 100%;
-  margin-top: -18px;
+  /*margin-top: -18px;*/
   /*padding: 20px;*/
   position: fixed;
   color: white;
-  z-index: 5;
+  z-index: 7;
 }
 .App-title {
   font-size: 1.5em;
@@ -29,8 +29,8 @@
 .heroImg1 {
   background-image: url('html-code-screen.png');
 }
-.hero2 {
-  background-image: url('html-code-screen.png');
+.heroImg2 {
+  background-image: url('macBook-on-wood-desk.jpg');
 }
 .hero-img {
   /*margin-top: 75px;*/
@@ -41,21 +41,51 @@
   background-size: cover;
   background-attachment: fixed;
   z-index: 1;
+  display: table-cell;
+  vertical-align: middle;
+  /*text-align: center;*/
+  /*position: fixed;*/
 }
+
+.hero-text{
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  width: 50vw;
+  margin-left: 25vw;
+  /*margin: auto;*/
+  z-index: 2;
+}
+
+.hero-img p{
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  background-attachment: fixed;
+  width: 50vw;
+  margin-left: 25vw;
+  /*margin: auto;*/
+  z-index: 2;
+}
+
 .title-bar {
   height: 100px;
-  background-attachment: scroll;
-  margin-bottom: 3rem;
-  border-bottom: 1px solid blue;
+  /*background-attachment: scroll;*/
+  padding: 1rem;
+  /*border-top: 1px solid blue;*/
+  position: relative;
+  z-index: 5;
 }
 .single {
   height: auto;
-  background-attachment: scroll;
-  margin-bottom: 1rem;
+  /*background-attachment: scroll;*/
+  margin-bottom: 3rem;
   padding: 1rem;
-  border-bottom: 1px solid blue;
+  border-top: 1px solid blue;
+  position: relative;
+  z-index: 5;
 }
-.single h3 {
+.single h2 {
   /*margin: 0;*/
 }
 .project {

@@ -19,15 +19,15 @@ export default class Single extends Component {
     }
     return (
       <div className="single">
-        <h3>{this.props.title}</h3>
+        <h2>{this.props.title}</h2>
         {this.props.backward ?
           <div className="flex-row">
-            <textarea >{this.props.text}</textarea>
+            <textarea value={this.props.text} readOnly></textarea>
             <a href={this.props.link} ><img src={picture} alt="Video screenshot" className="single-image"/></a>
           </div> :
           <div className="flex-row">
             <a href={this.props.link} ><img src={picture} alt="Video screenshot" className="single-image"/></a>
-            <textarea >{this.props.text}</textarea>
+            <textarea value={this.props.text} readOnly></textarea>
           </div>
         }
       </div>

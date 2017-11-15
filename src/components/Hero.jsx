@@ -1,17 +1,17 @@
 import React, {Component} from 'react';
-import heroImg from '../styles/html-code-screen.png'
 
 export default class Hero extends Component {
   render() {
 
     const {
-      text,
-      imageClassName,
+      imageClassName
+      // heroText,
     } = this.props
 
     return (
       <div className={`hero-img ${imageClassName}`}>
-        <p>{text}</p>
+        {/* <p className="hero-text">{this.props.heroText}</p> */}
+        <p>{this.props.heroText}</p>
       </div>
     );
   }

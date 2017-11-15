@@ -6,7 +6,11 @@ export default class Contact extends React.Component {
   }
 
   render() {
-    return (<div>MyComponent</div>);
+    return (
+      <div>
+        Contact!
+      </div>
+    );
   }
 }
 
