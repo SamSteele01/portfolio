@@ -17,8 +17,8 @@
 }
 
 .take-Up-Space{
-  height: 60px;
-  width: 100px;
+  height: 75px;
+  width: 118px;
 }
 
 .contact-button{
@@ -39,56 +39,57 @@
   display: block;
   background-color: white;
   border: 2px solid #222c35;
-  height: 50vh;
+  height: 35vh;
   width: 80vw;
   position: fixed;
   z-index: 6;
   margin: 75px 10vw 0 10vw;
 }
 
-.icon{
-  width: 25vw;
+.icon {
+  margin: 1rem;
+  .flex-column;
+  align-items: center;
+  & img{
+    width: 13vw;
+    margin-top: 1rem;
+  }
+
 }
 
 .heroImg1 {
-  background-image: url('Seneca-Creek.jpg');
+  background-image: url('IMG_0200.jpg');
 }
 .heroImg2 {
-  background-image: url('macBook-on-wood-desk.jpg');
+  background-image: url('IMG_0201.jpg');
 }
 .heroImg3 {
-  background-image: url('html-code-screen.png');
+  background-image: url('IMG_0206.jpg');
 }
 .hero-img {
-  /*margin-top: 75px;*/
   height: 90vh;
   width: 100vw;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: top;
   background-size: cover;
   background-attachment: fixed;
   z-index: 1;
   display: table-cell;
   vertical-align: middle;
-  /*text-align: center;*/
-  /*position: fixed;*/
+  & p{
+    color: white;
+    font-size: 60px;
+    background-attachment: fixed;
+    width: 50vw;
+    margin-left: 25vw;
+    z-index: 2;
+  }
 }
 
 .hero-text{
   color: white;
   font-size: 20px;
   position: absolute;
-  width: 50vw;
-  margin-left: 25vw;
-  /*margin: auto;*/
-  z-index: 2;
-}
-
-.hero-img p{
-  color: white;
-  font-size: 20px;
-  /*position: absolute;*/
-  background-attachment: fixed;
   width: 50vw;
   margin-left: 25vw;
   /*margin: auto;*/
@@ -120,10 +121,10 @@
   z-index: 3;
 }
 .single-image {
-  height: 27vw;
-  width: 45vw;
+  height: 30vw;
+  width: 50vw;
   border: 1px solid black;
-  /*margin: 1rem 3rem 3rem 3rem;*/
+  margin: 1rem;
   flex-shrink: 0;
 }
 .flex-row {
@@ -143,7 +144,7 @@
   border: none;
   padding: 0 3vw;
   /*margin: 0 3rem 2rem 0;*/
-  width: 45vw;
+  // width: 45vw;
   height: auto;
   font-size: 1.3vw;
 }

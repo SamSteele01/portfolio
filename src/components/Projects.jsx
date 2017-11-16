@@ -50,6 +50,7 @@ export default class Projects extends Component {
   render() {
     return (
       <div className="project">
+        <div className="take-Up-Space"></div>
         <Hero imageClassName={this.state.heroImg1} heroText={heroText[1]}/>
 
         <TitleBar category={this.state.category1} description={this.state.description1} />
@@ -57,14 +58,18 @@ export default class Projects extends Component {
         <Single title={this.state.title2} image={Image2} placeholder={placeholder} link={this.state.link2} text={projectText[2]} gitHub={this.state.gitHub2} backward={true}/>
         <Single title={this.state.title3} image={Image3} placeholder={placeholder} link={this.state.link3} text={projectText[3]} gitHub={this.state.gitHub3}/>
 
-        <Hero imageClassName={this.state.heroImg2} heroText={heroText[2]}/>
+        <Hero imageClassName={this.state.heroImg2}
+        // heroText={heroText[2]}
+        />
 
         <TitleBar category={this.state.category2} description={this.state.description2} />
         <Single title={this.state.title4} image={Image4} placeholder={placeholder} text={projectText[4]} gitHub={this.state.gitHub4} backward={true}/>
         <Single title={this.state.title5} image={Image5} placeholder={placeholder} text={projectText[5]} gitHub={this.state.gitHub5} />
         {/* <Single title={this.state.title5} image={this.state.image1} placeholder={placeholder} text={this.state.text6} backward={true}/> */}
 
-        <Hero imageClassName={this.state.heroImg3} heroText={heroText[3]}/>
+        <Hero imageClassName={this.state.heroImg3}
+        // heroText={heroText[3]}
+        />
 
         <TitleBar category={this.state.category3} description={this.state.description3} />
         <Single title={this.state.title6} image={Image6} placeholder={placeholder} text={this.state.text6} gitHub={this.state.gitHub6} backward={true}/>
