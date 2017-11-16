@@ -1,61 +1,66 @@
 .App {
   text-align: center;
 }
-
 .App-logo {
-  /*animation: App-logo-spin infinite 20s linear;*/
   height: 75px;
 }
-
 .App-header {
-  /*background-color: #1A2128;*/
-  background-color: rgb(34, 44, 53);
+  background-color: #222c35;
   height: 75px;
   width: 100%;
-  /*margin-top: -75px;*/
-  /*padding: 20px;*/
   position: fixed;
   color: white;
-  z-index: 5;
+  z-index: 7;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.App-title {
-  font-size: 1.5em;
+.take-Up-Space{
+  height: 60px;
+  width: 100px;
 }
 
-.App-intro {
-  font-size: large;
+.contact-button{
+  align-self: center;
+  color: #A3CCF3;
+  font-size: 20px;
+  background-color: #222c35;
+  margin: 1rem;
+  padding: .5rem;
+  border: 1px solid #A3CCF3;
+  border-radius: 8px;
+  &:focus{
+    outline: none;
+  }
 }
 
-/*@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}*/
-
-.heroImg1{
-  background-image: url('./html-code-screen.png');
+.contact{
+  display: block;
+  background-color: white;
+  border: 2px solid #222c35;
+  height: 50vh;
+  width: 80vw;
+  position: fixed;
+  z-index: 6;
+  margin: 75px 10vw 0 10vw;
 }
 
-.hero2{
-  background-image: url('./html-code-screen.png');
+.icon{
+  width: 25vw;
 }
 
-
-
-// @hero: ~".hero1, hero2, hero3";
-//
-// @{hero} {
-//  height: 60vh;
-//   width: 100vw;
-//   background-repeat: no-repeat;
-//   background-position: top;
-//   background-size: contain;
-//   background-attachment: fixed;
-//   z-index: 1;
-// }
-
+.heroImg1 {
+  background-image: url('Seneca-Creek.jpg');
+}
+.heroImg2 {
+  background-image: url('macBook-on-wood-desk.jpg');
+}
+.heroImg3 {
+  background-image: url('html-code-screen.png');
+}
 .hero-img {
-  // margin-top: 75px;
+  /*margin-top: 75px;*/
   height: 90vh;
   width: 100vw;
   background-repeat: no-repeat;
@@ -63,48 +68,85 @@
   background-size: cover;
   background-attachment: fixed;
   z-index: 1;
+  display: table-cell;
+  vertical-align: middle;
+  /*text-align: center;*/
+  /*position: fixed;*/
 }
 
-.title-bar{
+.hero-text{
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  width: 50vw;
+  margin-left: 25vw;
+  /*margin: auto;*/
+  z-index: 2;
+}
+
+.hero-img p{
+  color: white;
+  font-size: 20px;
+  /*position: absolute;*/
+  background-attachment: fixed;
+  width: 50vw;
+  margin-left: 25vw;
+  /*margin: auto;*/
+  z-index: 2;
+}
+
+.title-bar {
   height: 100px;
-  background-attachment: scroll;
-  margin-bottom: 3rem;
-  border-bottom: 1px solid blue;
+  /*background-attachment: scroll;*/
+  padding: 1rem;
+  /*border-top: 1px solid blue;*/
+  position: relative;
+  z-index: 5;
 }
-
-.single{
+.single {
   height: auto;
-  background-attachment: scroll;
+  /*background-attachment: scroll;*/
   margin-bottom: 3rem;
-  border-bottom: 1px solid blue;
+  padding: 1rem;
+  border-top: 1px solid blue;
+  position: relative;
+  z-index: 5;
 }
-
-.single h3{
-  margin: 0;
-
+.single h2 {
+  /*margin: 0;*/
 }
-
-.project{
-  padding: 3vw;
+.project {
+  /*padding: 3vw;*/
   z-index: 3;
 }
-
-.single-image{
-  height: 270px;
-  width: 540px;
+.single-image {
+  height: 27vw;
+  width: 45vw;
   border: 1px solid black;
-  margin: 1rem 3rem 3rem 3rem;
+  /*margin: 1rem 3rem 3rem 3rem;*/
   flex-shrink: 0;
 }
-
-.flex-row{
+.flex-row {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
+}
+.flex-column{
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
 }
-
-.flex-row p{
-  padding: 3vw;
-  margin: 0 3rem 2rem 0;
-
+.flex-column p {
+  // box-sizing: border-box;
+  // display: block;
+  text-align: left;
+  border: none;
+  padding: 0 3vw;
+  /*margin: 0 3rem 2rem 0;*/
+  width: 45vw;
+  height: auto;
+  font-size: 1.3vw;
+}
+.flex-column a{
+  margin-top: 1rem;
 }

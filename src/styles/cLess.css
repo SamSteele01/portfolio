@@ -2,20 +2,40 @@
   text-align: center;
 }
 .App-logo {
-  /*animation: App-logo-spin infinite 20s linear;*/
   height: 75px;
 }
 .App-header {
-  /*background-color: #1A2128;*/
   background-color: #222c35;
   height: 75px;
   width: 100%;
-  /*margin-top: -18px;*/
-  /*padding: 20px;*/
   position: fixed;
   color: white;
   z-index: 7;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
+
+.take-Up-Space{
+  height: 60px;
+  width: 100px;
+}
+
+.contact-button{
+  align-self: center;
+  color: #81C2F2;
+  font-size: 20px;
+  background-color: #222c35;
+  margin: 1rem;
+  padding: .5rem;
+  border: 1px solid #81C2F2;
+  border-radius: 8px;
+}
+
+.contact{
+  
+}
+
 .App-title {
   font-size: 1.5em;
 }
@@ -60,7 +80,7 @@
 .hero-img p{
   color: white;
   font-size: 20px;
-  position: absolute;
+  /*position: absolute;*/
   background-attachment: fixed;
   width: 50vw;
   margin-left: 25vw;
@@ -104,7 +124,12 @@
   flex-direction: row;
   justify-content: space-between;
 }
-.flex-row textarea {
+.flex-column{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.flex-column textarea {
   box-sizing: border-box;
   display: block;
   border: none;
@@ -113,4 +138,7 @@
   width: 45vw;
   height: 27vw;
   font: 14px sans-serif;
+}
+.flex-column a{
+  margin-top: 1rem;
 }
