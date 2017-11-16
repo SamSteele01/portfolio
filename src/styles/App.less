@@ -11,8 +11,7 @@
   position: fixed;
   color: white;
   z-index: 7;
-  display: flex;
-  flex-direction: row;
+  .flex-row;
   justify-content: space-between;
 }
 
@@ -136,18 +135,14 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-.flex-column p {
-  // box-sizing: border-box;
-  // display: block;
-  text-align: left;
-  border: none;
-  padding: 0 3vw;
-  /*margin: 0 3rem 2rem 0;*/
-  // width: 45vw;
-  height: auto;
-  font-size: 1.3vw;
-}
-.flex-column a{
+  & p{
+    text-align: left;
+    border: none;
+    padding: 0 3vw;
+    height: auto;
+    font-size: 1.3vw;
+  }
+  & a{
   margin-top: 1rem;
+  }
 }

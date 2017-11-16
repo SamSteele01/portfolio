@@ -27,6 +27,15 @@ export default class Single extends Component {
     }else{
       picture = placeholder;
     }
+
+    let paragraphs = (<p></p>);
+
+    if(text){
+      paragraphs = text.map((paragraph, index) =>{
+        return( < p key={index} >{paragraph}</p> )
+      });
+    }
+
     return (
       <div className="single">
         <h2>{title}</h2>
@@ -34,7 +43,7 @@ export default class Single extends Component {
           <div className="flex-row">
             <div className="flex-column">
               {/* <textarea value={text} readOnly></textarea> */}
-              <p>{text}</p>
+              {paragraphs}
               <a href={gitHub} target="_blank">See the code on GitHub</a>
             </div>
             <div className="flex-column">
@@ -53,7 +62,7 @@ export default class Single extends Component {
             </div>
             <div className="flex-column">
               {/* <textarea value={text} readOnly></textarea> */}
-              <p>{text}</p>
+              {paragraphs}
               <a href={gitHub} target="_blank">See the code on GitHub</a>
             </div>
           </div>
