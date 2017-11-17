@@ -77,24 +77,13 @@
   vertical-align: middle;
   & p{
     color: white;
-    font-size: 60px;
+    font-size: 9vw;
     background-attachment: fixed;
     width: 50vw;
     margin-left: 25vw;
     z-index: 2;
   }
 }
-
-.hero-text{
-  color: white;
-  font-size: 20px;
-  position: absolute;
-  width: 50vw;
-  margin-left: 25vw;
-  /*margin: auto;*/
-  z-index: 2;
-}
-
 .title-bar {
   height: 100px;
   /*background-attachment: scroll;*/
@@ -134,7 +123,7 @@
 .flex-column{
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   & p{
     text-align: left;
     border: none;
@@ -145,4 +134,88 @@
   & a{
   margin-top: 1rem;
   }
+}
+.title {
+  margin-bottom: 24px;
+  font-size: 40px;
+  text-align: center;
+}
+.subtitle {
+  margin-bottom: 64px;
+  font-weight: normal;
+  text-align: center;
+}
+
+@media (max-width: 400px) {
+  .title {
+    font-size: 32px;
+  }
+  .subtitle {
+    font-size: 20px;
+  }
+}
+.toolbelt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #222c35;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  // color: #222c35;
+  color: #fff;
+  padding: 80px 0;
+}
+
+.skills-container {
+  margin: 0;
+  .skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .skill {
+      width: 100px;
+      margin: 0 5px -20px 5px;
+      position: relative;
+      &:hover::after {
+        content: attr(data-name);
+        position: absolute;
+        background: rgba(0,0,0,0.75);
+        padding: 10px 20px;
+        border-radius: 5px;
+        bottom: -45px;
+        max-width: 100vw;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #fff;
+        z-index: 10;
+      }
+      img {
+        width: 100px;
+        transition: transform .5s, opacity .3s;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+    .unselected {
+      img {
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+@media (max-width: 641px) {
+  .skills-container {
+      .skill-list {
+        .skill {
+          width: 64px;
+          margin: 0 2px -17px 2px;
+          img {
+            width: 64px;
+          }
+        }
+      }
+    }
 }
