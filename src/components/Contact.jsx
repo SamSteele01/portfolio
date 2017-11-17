@@ -6,12 +6,39 @@ import Icon3 from '../styles/icons/gitHub-icon.svg';
 export default class Contact extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      windowWidth: window.innerWidth
+    }
+
+    this.setMedia = this.setMedia.bind(this)
+  };
+
+  setMedia() {
+    this.setState({windowWidth: window.innerWidth});
   }
+
+  componentDidMount(){
+    window.addEventListener("resize", this.setMedia);
+  }
+
+  componentWillUnmount(){
+    window.removeEventListener("resize", this.setMedia);
+  }
+
 
 // email, linkedIn, gitHub
   render() {
+
+    let flexType = "";
+    if(this.state.windowWidth > 750){
+      flexType = "flex-row";
+    }else{
+      flexType = "flex-column";
+    }
+
     return (
-      <div className="contact flex-row">
+      <div className={`contact ${flexType}`}>
         <div className="icon">
           <img src={Icon1}/>
           <p>ssteele017@gmail.com</p>

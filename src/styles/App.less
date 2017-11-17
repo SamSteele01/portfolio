@@ -42,9 +42,13 @@
   width: 80vw;
   position: fixed;
   z-index: 6;
-  margin: 75px 10vw 0 10vw;
+  margin: 74px 10vw 0 10vw;
+  @media (max-width: 750px){
+    width: 64vw;
+    height: 80vh;
+    margin: 74px 18vw 0 18vw;
+  }
 }
-
 .icon {
   margin: 1rem;
   .flex-column;
@@ -53,9 +57,7 @@
     width: 13vw;
     margin-top: 1rem;
   }
-
 }
-
 .heroImg1 {
   background-image: url('IMG_0200.jpg');
 }
@@ -86,26 +88,19 @@
 }
 .title-bar {
   height: 100px;
-  /*background-attachment: scroll;*/
   padding: 1rem;
-  /*border-top: 1px solid blue;*/
   position: relative;
   z-index: 5;
 }
 .single {
   height: auto;
-  /*background-attachment: scroll;*/
   margin-bottom: 3rem;
   padding: 1rem;
   border-top: 1px solid blue;
   position: relative;
   z-index: 5;
 }
-.single h2 {
-  /*margin: 0;*/
-}
 .project {
-  /*padding: 3vw;*/
   z-index: 3;
 }
 .single-image {
@@ -114,6 +109,11 @@
   border: 1px solid black;
   margin: 1rem;
   flex-shrink: 0;
+  @media (max-width: 750px){
+    width: 90vw;
+    height: 54vw;
+
+  }
 }
 .flex-row {
   display: flex;
@@ -124,12 +124,15 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  font-size: 1.4vw;
+  @media (max-width: 750px){
+    font-size: 2.6vw;
+  }
   & p{
     text-align: left;
     border: none;
     padding: 0 3vw;
     height: auto;
-    font-size: 1.3vw;
   }
   & a{
   margin-top: 1rem;
@@ -139,11 +142,13 @@
   margin-bottom: 24px;
   font-size: 40px;
   text-align: center;
+  color: #fff;
 }
 .subtitle {
   margin-bottom: 64px;
   font-weight: normal;
   text-align: center;
+  color: #fff;
 }
 
 @media (max-width: 400px) {
@@ -162,8 +167,8 @@
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
-  // color: #222c35;
-  color: #fff;
+  // color: #fff;
+  color: #222c35;
   padding: 80px 0;
 }
 
