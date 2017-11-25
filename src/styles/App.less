@@ -1,3 +1,5 @@
+// $ node node_modules/less-watch-compile -w src/styles -o src/styles
+
 .App {
   text-align: center;
 }
@@ -38,7 +40,7 @@
   display: block;
   background-color: white;
   border: 2px solid #222c35;
-  height: 35vh;
+  height: 30vw;
   width: 80vw;
   position: fixed;
   z-index: 6;
@@ -54,10 +56,17 @@
   .flex-column;
   align-items: center;
   & img{
-    width: 13vw;
+    max-width: 13vw;
     margin-top: 1rem;
   }
-  
+  @media (max-width: 750px){
+    & p{
+      margin: .5rem;
+    }
+    & img{
+      max-height: 13vh;
+    }
+  }
 }
 .heroImg1 {
   background-image: url('./heroImages/IMG_0200.jpg');
