@@ -4,14 +4,14 @@ import Single from './Single.jsx';
 import TitleBar from './TitleBar.jsx';
 import heroText from '../data/heroText.js';
 import projectText from '../data/projectText.js';
-import placeholder from '../styles/responsive-design-dark-blue.png';
-import Image1 from '../styles/EZ-tour.png';
-import Image2 from '../styles/slack-overflow.png';
-import Image3 from '../styles/etsy.png';
-import Image4 from '../styles/Code-snippet2.png';
-import Image5 from '../styles/robot-linkedin.png';
-import Image6 from '../styles/memory-game.png';
-import Image7 from '../styles/bent-creek.png';
+import placeholder from '../styles/projectImages/responsive-design-dark-blue.png';
+import Image1 from '../styles/projectImages/EZ-tour.png';
+import Image2 from '../styles/projectImages/slack-overflow.png';
+import Image3 from '../styles/projectImages/etsy.png';
+import Image4 from '../styles/projectImages/Code-snippet2.png';
+import Image5 from '../styles/projectImages/robot-linkedin.png';
+import Image6 from '../styles/projectImages/memory-game.png';
+import Image7 from '../styles/projectImages/bent-creek.png';
 
 export default class Projects extends Component {
   constructor(props) {
