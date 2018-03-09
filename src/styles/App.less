@@ -3,16 +3,19 @@
 .App {
   text-align: center;
   position: relative;
+  // margin: -75px 0;
 }
 
 .App-logo {
   height: 75px;
 }
+
 .App-header {
   background-color: #222c35;
+  border-bottom: 2px solid white;
   height: 75px;
   width: 100%;
-  // position: fixed;
+  position: bottom;
   top: 0px;
   color: white;
   z-index: 7;
@@ -54,6 +57,31 @@
     margin: 74px 18vw 0 18vw;
   }
 }
+
+.header-wrapper {
+  .headroom {
+    top: 0;
+    left: 0;
+    right: 0;
+    z-Index: 7;
+  }
+  .headroom--unfixed {
+    position: relative;
+    transform: translateY(0);
+  }
+  .headroom--scrolled {
+    transition: transform 200ms ease-in-out;
+  }
+  .headroom--unpinned {
+    position: fixed;
+    transform: translateY(-100%);
+  }
+  .headroom--pinned {
+    position: fixed;
+    transform: translateY(0%);
+  }
+}
+
 .icon {
   margin: 1rem;
   .flex-column;
@@ -115,6 +143,7 @@
 }
 .project {
   z-index: 3;
+
 }
 .single-image {
   height: 30vw;
@@ -236,4 +265,43 @@
         }
       }
     }
+}
+
+.footer-wrapper {
+  .headroom {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-Index: 7;
+  }
+  .headroom--unfixed {
+    position: relative;
+    transform: translateY(0);
+  }
+  .headroom--scrolled {
+    transition: transform 200ms ease-in-out;
+  }
+  .headroom--unpinned {
+    position: fixed;
+    transform: translateY(100%);
+  }
+  .headroom--pinned {
+    position: fixed;
+    transform: translateY(0%);
+  }
+}
+
+.footer {
+  background-color: #222c35;
+  border-top: 2px solid white;
+  height: 75px;
+  width: 100%;
+  // position: fixed;
+  top: 0px;
+  color: white;
+  z-index: 7;
+}
+
+.app-bottom {
+  margin-bottom: -75px;
 }

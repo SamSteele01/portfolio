@@ -7,8 +7,10 @@
 }
 .App-header {
   background-color: #222c35;
+  border-bottom: 2px solid white;
   height: 75px;
   width: 100%;
+  position: bottom;
   top: 0px;
   color: white;
   z-index: 7;
@@ -50,6 +52,27 @@
     height: 80vh;
     margin: 74px 18vw 0 18vw;
   }
+}
+.header-wrapper .headroom {
+  top: 0;
+  left: 0;
+  right: 0;
+  z-Index: 7;
+}
+.header-wrapper .headroom--unfixed {
+  position: relative;
+  transform: translateY(0);
+}
+.header-wrapper .headroom--scrolled {
+  transition: transform 200ms ease-in-out;
+}
+.header-wrapper .headroom--unpinned {
+  position: fixed;
+  transform: translateY(-100%);
+}
+.header-wrapper .headroom--pinned {
+  position: fixed;
+  transform: translateY(0%);
 }
 .icon {
   margin: 1rem;
@@ -243,4 +266,37 @@
   .skills-container .skill-list .skill img {
     width: 64px;
   }
+}
+.footer-wrapper .headroom {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-Index: 7;
+}
+.footer-wrapper .headroom--unfixed {
+  position: relative;
+  transform: translateY(0);
+}
+.footer-wrapper .headroom--scrolled {
+  transition: transform 200ms ease-in-out;
+}
+.footer-wrapper .headroom--unpinned {
+  position: fixed;
+  transform: translateY(100%);
+}
+.footer-wrapper .headroom--pinned {
+  position: fixed;
+  transform: translateY(0%);
+}
+.footer {
+  background-color: #222c35;
+  border-top: 2px solid white;
+  height: 75px;
+  width: 100%;
+  top: 0px;
+  color: white;
+  z-index: 7;
+}
+.app-bottom {
+  margin-bottom: -75px;
 }
