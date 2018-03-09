@@ -4,19 +4,28 @@
   "private": true,
   "dependencies": {
     "jquery": "^3.2.1",
-    "less": "^2.7.3",
-    "less-loader": "^4.0.5",
-    "less-watch-compile": "^1.1.8",
     "lodash": "^4.17.4",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-flip-move": "^3.0.1",
+    "react-headroom": "^2.2.2",
     "react-scripts": "1.0.16",
     "react-scroll": "^1.6.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start-js": "react-scripts start",
+    "start": "npm-run-all --parallel start-js watch-css",
+    "watch-css": "node node_modules/less-watch-compile -w src/styles -o src/styles",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "eslint": "^4.18.2",
+    "eslint-plugin-react": "^7.7.0",
+    "less": "^2.7.3",
+    "less-loader": "^4.0.5",
+    "less-watch-compile": "^1.1.8",
+    "npm-run-all": "^4.1.2"
   }
 }
