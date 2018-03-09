@@ -2,7 +2,9 @@
 
 .App {
   text-align: center;
+  position: relative;
 }
+
 .App-logo {
   height: 75px;
 }
@@ -10,7 +12,8 @@
   background-color: #222c35;
   height: 75px;
   width: 100%;
-  position: fixed;
+  // position: fixed;
+  top: 0px;
   color: white;
   z-index: 7;
   .flex-row;
@@ -44,7 +47,7 @@
   width: 80vw;
   position: fixed;
   z-index: 6;
-  margin: 74px 10vw 0 10vw;
+  margin: 0 10vw 0 10vw;
   @media (max-width: 750px){
     width: 64vw;
     height: 80vh;

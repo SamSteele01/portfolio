@@ -9,10 +9,10 @@ export default class Contact extends React.Component {
 
     this.state = {
       windowWidth: window.innerWidth
-    }
+    };
 
     this.setMedia = this.setMedia.bind(this)
-  };
+  }
 
   setMedia() {
     this.setState({windowWidth: window.innerWidth});
@@ -27,7 +27,7 @@ export default class Contact extends React.Component {
   }
 
 
-// email, linkedIn, gitHub
+  // email, linkedIn, gitHub
   render() {
 
     let flexType = "";
@@ -38,7 +38,7 @@ export default class Contact extends React.Component {
     }
 
     return (
-      <div className={`contact ${flexType}`}>
+      <div key='b' className={`contact ${flexType}`}>
         <div className="icon">
           <img src={Icon1}/>
           <p>ssteele017@gmail.com</p>
