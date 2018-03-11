@@ -9,10 +9,14 @@ export default class Single extends Component {
 
     this.state = {
       windowWidth: window.innerWidth,
-      mobileView: false
-    }
-    this.setMedia = this.setMedia.bind(this)
-  };
+      mobileView: false,
+      initdropdown: false,
+      dropdownclassname: "text-container-minimized",
+      dropDownButtonText: "+ More",
+    };
+    this.handledropdown = this.handledropdown.bind(this);
+    this.setMedia = this.setMedia.bind(this);
+  }
 
   setMedia() {
     this.setState({windowWidth: window.innerWidth});
@@ -20,13 +24,24 @@ export default class Single extends Component {
 
   componentDidMount(){
     window.addEventListener("resize", this.setMedia);
+
+    let textContainer = document.getElementsByClassName('text-container')[0];
+    if (textContainer !== undefined && this.state.initdropdown === false){
+      const lineheight = document.defaultView.getComputedStyle(textContainer, null);
+      if (parseInt(lineheight.height, 10) > 150){
+        this.setState({ initdropdown: true });
+      }
+    }
   }
 
-  // componentDidMount() {
-  //   $(window).resize(() => {
-  //     this.setState({ windowWidth: $(window).width() })
-  //   })
-  // }
+  handledropdown(event){
+    event.preventDefault();
+    if (this.state.dropdownclassname === "text-container-full"){
+      this.setState({ dropdownclassname: "text-container-minimized", dropDownButtonText: "+ More" });
+    } else if (this.state.dropdownclassname === "text-container-minimized"){
+      this.setState({ dropdownclassname: "text-container-full", dropDownButtonText: "- Less" });
+    }
+  }
 
   render() {
     let media = this.state.windowWidth;
@@ -64,9 +79,21 @@ export default class Single extends Component {
       </div>
 
     let divText =
-      <div className="flex-column">
+      <div className="text-container flex-column">
         {/* <textarea value={text} readOnly></textarea> */}
-        {paragraphs}
+        
+        {this.state.initdropdown ? (
+          <div>
+            <div className={this.state.dropdownclassname}>
+              {paragraphs}
+            </div>
+            <button onClick={this.handledropdown}>{this.state.dropDownButtonText}</button>
+          </div>
+        ) : (
+          <div className="text-container-full">
+            {paragraphs}
+          </div>
+        )}
         <a href={gitHub} target="_blank">See the code on GitHub</a>
       </div>
 

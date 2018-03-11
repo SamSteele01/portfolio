@@ -6,6 +6,8 @@
   // margin: -75px 0;
 }
 
+// <<<<<<<<<<<<<<<<<Header>>>>>>>>>>>>>>
+
 .App-logo {
   height: 75px;
 }
@@ -28,6 +30,8 @@
   width: 118px;
 }
 
+// <<<<<<<<<<<<<<Contact>>>>>>>>>>>>>
+
 .contact-button{
   align-self: center;
   color: #A3CCF3;
@@ -41,20 +45,24 @@
     outline: none;
   }
 }
-
 .contact{
   display: block;
   background-color: white;
   border: 2px solid #222c35;
-  height: 30vw;
+  height: 100px;
   width: 80vw;
   position: fixed;
   z-index: 6;
   margin: 0 10vw 0 10vw;
   @media (max-width: 750px){
     width: 64vw;
-    height: 80vh;
-    margin: 74px 18vw 0 18vw;
+    height: 60vh;
+    margin: 0 18vw;
+  }
+  @media (max-width: 450px){
+    width: 80vw;
+    height: 60vh;
+    margin: 0 10vw;
   }
 }
 
@@ -87,7 +95,7 @@
   .flex-column;
   align-items: center;
   & img{
-    max-width: 13vw;
+    max-width: 32px;
     margin-top: 1rem;
   }
   @media (max-width: 750px){
@@ -95,10 +103,16 @@
       margin: .5rem;
     }
     & img{
-      max-height: 13vh;
+      max-height: 32px;
     }
   }
 }
+
+.project {
+  z-index: 3;
+
+}
+
 .heroImg1 {
   background-image: url('./heroImages/IMG_0200.jpg');
 }
@@ -132,19 +146,29 @@
   padding: 1rem;
   position: relative;
   z-index: 5;
+  color: #222c35;
+  // background-color: rgb(185, 185, 197);
+  background-color: white;
 }
+
+// .d8888. d888888b d8b   db  d888b  db      d88888b 
+// 88'  YP   `88'   888o  88 88' Y8b 88      88'     
+// `8bo.      88    88V8o 88 88      88      88ooooo 
+//   `Y8b.    88    88 V8o88 88  ooo 88      88~~~~~ 
+// db   8D   .88.   88  V888 88. ~8~ 88booo. 88.     
+// `8888Y' Y888888P VP   V8P  Y888P  Y88888P Y88888P 
+
 .single {
   height: auto;
   margin-bottom: 3rem;
   padding: 1rem;
-  border-top: 1px solid blue;
+  // border-top: 1px solid blue;
   position: relative;
   z-index: 5;
+  color: #222c35;
+  box-shadow: 4px 6px 16px 2px rgb(176, 176, 182)
 }
-.project {
-  z-index: 3;
 
-}
 .single-image {
   height: 30vw;
   width: 50vw;
@@ -154,7 +178,6 @@
   @media (max-width: 750px){
     width: 90vw;
     height: 54vw;
-
   }
 }
 .flex-row {
@@ -165,21 +188,89 @@
 .flex-column{
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  font-size: 1.4vw;
+  justify-content: flex-start;
+  font-size: 14px;
   @media (max-width: 750px){
     font-size: 2.6vw;
+  }
+  @media (max-width: 450px){
+    font-size: 11px;
   }
   & p{
     text-align: left;
     border: none;
-    padding: 0 3vw;
     height: auto;
   }
   & a{
   margin-top: 1rem;
   }
 }
+
+.text-container{
+  color: rgb(73, 73, 77);
+  padding: 0 3vw;
+  font-family: 'Lato', 'Arial', sans-serif;
+  padding-bottom: 25px;
+  // border-bottom: solid 1px #efefeb;
+}
+
+.text-container-minimized{
+  overflow: hidden;
+  height: 30vw + 2em;
+  position:relative;
+  text-align: left;
+  -webkit-box-shadow: inset 0px -70px 30px -30px rgba(255,255,255,1);
+  -moz-box-shadow: inset 0px -70px 30px -30px rgba(255,255,255,1);
+  box-shadow: inset 0px -70px 30px -30px rgba(255,255,255,1);
+}
+
+.text-container-minimized:before {
+  content:'';
+  width:100%;
+  height:100%;
+  position: absolute;
+  
+  -webkit-box-shadow: inset 0px -70px 30px -30px rgba(255,255,255,1);
+  -moz-box-shadow: inset 0px -70px 30px -30px rgba(255,255,255,1);
+  box-shadow: inset 0px -70px 30px -30px rgba(255,255,255,1);
+}
+
+.text-container button{
+  font-family: Arial;
+  color: #f45800;
+  font-size: 14px;
+  background: #ffffff;
+  border: solid #ffffff 0px;
+  text-decoration: none;
+}
+
+.text-container button:focus{
+  outline: none;
+}
+.text-container button:hover{
+  text-decoration: underline;
+  opacity: 1;
+}
+
+.details-header{
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
+  font-family: 'Lato', 'Arial', sans-serif;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+
+}
+
+
+// d888888b  .d88b.   .d88b.  db      d8888b. d88888b db      d888888b 
+// `~~88~~' .8P  Y8. .8P  Y8. 88      88  `8D 88'     88      `~~88~~' 
+//    88    88    88 88    88 88      88oooY' 88ooooo 88         88    
+//    88    88    88 88    88 88      88~~~b. 88~~~~~ 88         88    
+//    88    `8b  d8' `8b  d8' 88booo. 88   8D 88.     88booo.    88    
+//    YP     `Y88P'   `Y88P'  Y88888P Y8888P' Y88888P Y88888P    YP    
+
 .title {
   margin-bottom: 24px;
   font-size: 40px;
@@ -267,6 +358,8 @@
     }
 }
 
+// footer >>>>>>>>>>>>>>>>>>>>
+
 .footer-wrapper {
   .headroom {
     bottom: 0;
@@ -294,8 +387,12 @@
 .footer {
   background-color: #222c35;
   border-top: 2px solid white;
-  height: 75px;
+  height: 45px;
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   // position: fixed;
   top: 0px;
   color: white;
