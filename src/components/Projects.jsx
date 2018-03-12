@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
 import Hero from './Hero.jsx';
 import Single from './Single.jsx';
+import VideoSingle from './VideoSingle.jsx';
 import TitleBar from './TitleBar.jsx';
 import heroText from '../data/heroText.js';
 import projectText from '../data/projectText.js';
 import placeholder from '../styles/projectImages/responsive-design-dark-blue.png';
 import Image1 from '../styles/projectImages/EZ-tour.png';
+// import Video1 from 'https://s3.us-east-2.amazonaws.com/samsteelewebdevportfolio/trimmed-eztour-presentation2.mp4'
 import Image2 from '../styles/projectImages/slack-overflow.png';
 import Image3 from '../styles/projectImages/etsy.png';
 import Image4 from '../styles/projectImages/Code-snippet2.png';
@@ -21,6 +23,7 @@ export default class Projects extends Component {
       heroImg1: "heroImg1",
       heroImg2: "heroImg2",
       heroImg3: "heroImg3",
+      video1: 'https://s3.us-east-2.amazonaws.com/samsteelewebdevportfolio/trimmed-eztour-presentation2.mp4',
       title1: "EZ-Tour",
       title2: "Slack-overflow",
       title3: "Etsy",
@@ -53,7 +56,7 @@ export default class Projects extends Component {
         <Hero imageClassName={this.state.heroImg1} heroText={heroText[1]}/>
 
         <TitleBar category={this.state.category1} description={this.state.description1} />
-        <Single title={this.state.title1} image={Image1} placeholder={placeholder} link={this.state.link1} text={projectText[1]} gitHub={this.state.gitHub1}/>
+        <VideoSingle title={this.state.title1} video={this.state.video1} image={Image1} placeholder={placeholder} link={this.state.link1} text={projectText[1]} gitHub={this.state.gitHub1}/>
         <Single title={this.state.title2} image={Image2} placeholder={placeholder} link={this.state.link2} text={projectText[2]} gitHub={this.state.gitHub2} backward={true}/>
         <Single title={this.state.title3} image={Image3} placeholder={placeholder} link={this.state.link3} text={projectText[3]} gitHub={this.state.gitHub3}/>
 
