@@ -13,9 +13,13 @@ export default class VideoSingle extends Component {
       initdropdown: false,
       dropdownclassname: "text-container-minimized",
       dropDownButtonText: "+ More",
+      videoClassName: "has-media-controls-hidden",
+      svgClassName: "video-overlay-play-button",
+      spanClassName: "video-hover-span"
     };
-    this.handledropdown = this.handledropdown.bind(this);
     this.setMedia = this.setMedia.bind(this);
+    this.handledropdown = this.handledropdown.bind(this);
+    this.videoClickHandler = this.videoClickHandler.bind(this);
   }
 
   setMedia() {
@@ -24,7 +28,6 @@ export default class VideoSingle extends Component {
 
   componentDidMount(){
     window.addEventListener("resize", this.setMedia);
-
     let textContainer = document.getElementsByClassName('text-container')[0];
     if (textContainer !== undefined && this.state.initdropdown === false){
       const lineheight = document.defaultView.getComputedStyle(textContainer, null);
@@ -32,6 +35,16 @@ export default class VideoSingle extends Component {
         this.setState({ initdropdown: true });
       }
     }
+  }
+
+  videoClickHandler(event){
+    event.preventDefault();
+    this.setState({
+      videoClassName: null,
+      svgClassName: "video-overlay-play-button is-hidden",
+      spanClassName: "video-hover-span-is-hidden"
+    });
+    this.refs.video.play();
   }
 
   handledropdown(event){
@@ -73,16 +86,23 @@ export default class VideoSingle extends Component {
 
     let divVideo =
       <div className="flex-column">
-        <video src={video} poster={picture} alt="Video" controls className="single-image"/>
+        <div className="video-wrapper" onClick={this.videoClickHandler}>
+          <video src={video} poster={picture} alt="Video" controls ref="video" className={this.state.videoClassName}/>
+          <svg className={this.state.svgClassName} viewBox="-70 -70 350 350" preserveAspectRatio="xMidYMid meet" alt="Play video">
+            <circle cx="100" cy="100" r="90" fill="none" strokeWidth="15" stroke="#fff"/>
+            <polygon points="70, 55 70, 145 145, 100" fill="#fff"/>
+          </svg>
+          <div className={this.state.spanClassName}>
+            <span>See our presentation from demo day.</span>
+          </div>
+        </div>
         {link &&
           <a href={link} target="_blank">See it deployed</a>
         }
       </div>
 
     let divText =
-      <div className="text-container flex-column">
-        {/* <textarea value={text} readOnly></textarea> */}
-        
+      <div className="text-container flex-column">  
         {this.state.initdropdown ? (
           <div>
             <div className={this.state.dropdownclassname}>
