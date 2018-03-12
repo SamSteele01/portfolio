@@ -179,7 +179,6 @@
   height: auto;
   margin-bottom: 3rem;
   padding: 1rem;
-  // border-top: 1px solid blue;
   position: relative;
   z-index: 5;
   color: #222c35;
@@ -206,6 +205,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  align-items: center;
   font-size: 14px;
   @media (max-width: 750px){
     font-size: 2.6vw;
@@ -216,12 +216,97 @@
   & p{
     text-align: left;
     border: none;
-    // height: auto;
   }
   & a{
   margin-top: 1rem;
   }
 }
+
+// db    db d888888b d8888b. d88888b  .d88b.  
+// 88    88   `88'   88  `8D 88'     .8P  Y8. 
+// Y8    8P    88    88   88 88ooooo 88    88 
+// `8b  d8'    88    88   88 88~~~~~ 88    88 
+//  `8bd8'    .88.   88  .8D 88.     `8b  d8' 
+//    YP    Y888888P Y8888D' Y88888P  `Y88P'  
+
+.video-wrapper {
+  position: relative;
+  margin: 1rem;
+}
+
+.video-wrapper:hover .video-hover-span {
+  visibility: visible;
+}
+
+.video-wrapper > video {
+  height: 30vw;
+  width: 50vw;
+  border: 1px solid black; 
+  flex-shrink: 0;
+  @media (max-width: 750px){
+    width: 90vw;
+    height: 54vw;
+  }
+}
+
+.video-wrapper > video.has-media-controls-hidden::-webkit-media-controls {
+  display: none;
+}
+
+.video-overlay-play-button {
+  box-sizing: inherit;
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  margin: auto;
+  opacity: 0.8;
+  cursor: pointer;
+  background-image: linear-gradient(transparent, #000);
+  transition: opacity 150ms;
+}
+
+.video-hover-span {
+  visibility: hidden;
+  position: absolute;
+  width: 34vw;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  bottom: 0;
+  margin: 0 8vw;
+  @media (max-width: 750px){
+    width: 70vw;
+    margin: 0 10vw;
+  }
+}
+
+.video-hover-span-is-hidden {
+  visibility: hidden;
+}
+
+.video-overlay-play-button:hover {
+  opacity: .6;
+}
+
+.video-overlay-play-button.is-hidden {
+  display: none;
+  .video-hover-span {
+    display: none;
+  }
+}
+
+// d888888b d88888b db    db d888888b 
+// `~~88~~' 88'     `8b  d8' `~~88~~' 
+//    88    88ooooo  `8bd8'     88    
+//    88    88~~~~~  .dPYb.     88    
+//    88    88.     .8P  Y8.    88    
+//    YP    Y88888P YP    YP    YP    
 
 .text-container{
   color: rgb(73, 73, 77);
@@ -286,7 +371,6 @@
   display: flex;
   align-items: center;
   padding: 10px;
-
 }
 
 
@@ -428,6 +512,9 @@
   top: 0px;
   color: white;
   z-index: 7;
+  & a {
+    color: white;
+  }
 }
 
 .app-bottom {
