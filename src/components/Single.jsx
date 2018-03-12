@@ -72,7 +72,7 @@ export default class Single extends Component {
 
     let divImage =
       <div className="flex-column">
-        <img src={picture} alt="Video screenshot" className="single-image"/>
+        <img src={picture} alt="screenshot of application" className="single-image"/>
         {link &&
           <a href={link} target="_blank">See it deployed</a>
         }
