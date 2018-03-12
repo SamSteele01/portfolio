@@ -1,6 +1,4 @@
 import React, {Component, PropTypes} from 'react';
-import $ from 'jquery';
-// import placeholder from '../styles/responsive-design-dark-blue.png';
 const snapSize = 750;
 
 export default class Single extends Component {
@@ -20,24 +18,23 @@ export default class Single extends Component {
 
   setMedia() {
     this.setState({windowWidth: window.innerWidth});
+    let textContainer = document.getElementsByClassName('single-image')[this.props.id];
+    let paragraphsElem = document.getElementsByClassName('paragraphs')[this.props.id];
+    if (textContainer !== undefined && paragraphsElem !== undefined){
+      const lineheight = textContainer.getBoundingClientRect();
+      const paragraphsElemHeight = paragraphsElem.getBoundingClientRect().height;
+      if (parseInt(lineheight.height, 10) < parseInt(paragraphsElemHeight, 10)){
+        this.setState({ initdropdown: true });
+      }
+      if (parseInt(lineheight.height, 10) > parseInt(paragraphsElemHeight, 10)){
+        this.setState({ initdropdown: false });
+      }
+    }
   }
 
   componentDidMount(){
+    this.setMedia();
     window.addEventListener("resize", this.setMedia);
-    console.log(this.refs);
-    let textContainer = document.getElementsByClassName('single-image')[this.props.id];
-    let paragraphsElem = document.getElementsByClassName('paragraphs')[this.props.id];
-    console.log('paragraphsElem: ', paragraphsElem);
-    if (textContainer !== undefined && this.state.initdropdown === false){
-      const lineheight = textContainer.getBoundingClientRect();
-      console.log('lineheight: ', lineheight.height);
-      const paragraphsElemHeight = paragraphsElem.getBoundingClientRect().height;
-      console.log('paragraphsElemHeight: ', paragraphsElemHeight);
-      // if (parseInt(lineheight.height, 10) > 150){
-      //   console.log('lineheight.height: ', lineheight.height);
-      //   this.setState({ initdropdown: true });
-      // }
-    }
   }
 
   handledropdown(event){
@@ -88,7 +85,6 @@ export default class Single extends Component {
 
     let divText =
       <div className="text-container flex-column">
-        {/* <textarea value={text} readOnly></textarea> */}
         
         {this.state.initdropdown ? (
           <div>
