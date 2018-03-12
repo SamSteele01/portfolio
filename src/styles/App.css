@@ -102,7 +102,6 @@
 .icon p {
   text-align: left;
   border: none;
-  height: auto;
 }
 .icon a {
   margin-top: 1rem;
@@ -204,7 +203,6 @@
 .flex-column p {
   text-align: left;
   border: none;
-  height: auto;
 }
 .flex-column a {
   margin-top: 1rem;
@@ -212,6 +210,7 @@
 .text-container {
   color: #49494d;
   padding: 0 3vw;
+  height: auto;
   font-family: 'Lato', 'Arial', sans-serif;
   padding-bottom: 25px;
 }
@@ -233,6 +232,9 @@
   -moz-box-shadow: inset 0px -70px 30px -30px #ffffff;
   box-shadow: inset 0px -70px 30px -30px #ffffff;
 }
+.text-container-full {
+  height: auto;
+}
 .text-container button {
   font-family: Arial;
   color: #f45800;
@@ -247,6 +249,9 @@
 .text-container button:hover {
   text-decoration: underline;
   opacity: 1;
+}
+.paragraphs {
+  height: auto;
 }
 .details-header {
   font-size: 16px;

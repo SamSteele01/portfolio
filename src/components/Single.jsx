@@ -12,7 +12,7 @@ export default class Single extends Component {
       mobileView: false,
       initdropdown: false,
       dropdownclassname: "text-container-minimized",
-      dropDownButtonText: "+ More",
+      dropDownButtonText: "v More",
     };
     this.handledropdown = this.handledropdown.bind(this);
     this.setMedia = this.setMedia.bind(this);
@@ -24,22 +24,28 @@ export default class Single extends Component {
 
   componentDidMount(){
     window.addEventListener("resize", this.setMedia);
-
-    let textContainer = document.getElementsByClassName('text-container')[0];
+    console.log(this.refs);
+    let textContainer = document.getElementsByClassName('single-image')[this.props.id];
+    let paragraphsElem = document.getElementsByClassName('paragraphs')[this.props.id];
+    console.log('paragraphsElem: ', paragraphsElem);
     if (textContainer !== undefined && this.state.initdropdown === false){
-      const lineheight = document.defaultView.getComputedStyle(textContainer, null);
-      if (parseInt(lineheight.height, 10) > 150){
-        this.setState({ initdropdown: true });
-      }
+      const lineheight = textContainer.getBoundingClientRect();
+      console.log('lineheight: ', lineheight.height);
+      const paragraphsElemHeight = paragraphsElem.getBoundingClientRect().height;
+      console.log('paragraphsElemHeight: ', paragraphsElemHeight);
+      // if (parseInt(lineheight.height, 10) > 150){
+      //   console.log('lineheight.height: ', lineheight.height);
+      //   this.setState({ initdropdown: true });
+      // }
     }
   }
 
   handledropdown(event){
     event.preventDefault();
     if (this.state.dropdownclassname === "text-container-full"){
-      this.setState({ dropdownclassname: "text-container-minimized", dropDownButtonText: "+ More" });
+      this.setState({ dropdownclassname: "text-container-minimized", dropDownButtonText: "v More" });
     } else if (this.state.dropdownclassname === "text-container-minimized"){
-      this.setState({ dropdownclassname: "text-container-full", dropDownButtonText: "- Less" });
+      this.setState({ dropdownclassname: "text-container-full", dropDownButtonText: "^ Less" });
     }
   }
 
@@ -62,12 +68,14 @@ export default class Single extends Component {
       picture = placeholder;
     }
 
-    let paragraphs = (<p></p>);
+    let paragraphs = (<div className="paragraphs"></div>);
+    let textPs = (<div></div>)
 
     if(text){
-      paragraphs = text.map((paragraph, index) =>{
+      textPs = text.map((paragraph, index) =>{
         return( < p key={index} >{paragraph}</p> )
       });
+      paragraphs = (<div className="paragraphs">{textPs}</div>)
     }
 
     let divImage =

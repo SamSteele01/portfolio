@@ -57,16 +57,16 @@ export default class Projects extends Component {
 
         <TitleBar category={this.state.category1} description={this.state.description1} />
         <VideoSingle title={this.state.title1} video={this.state.video1} image={Image1} placeholder={placeholder} link={this.state.link1} text={projectText[1]} gitHub={this.state.gitHub1}/>
-        <Single title={this.state.title2} image={Image2} placeholder={placeholder} link={this.state.link2} text={projectText[2]} gitHub={this.state.gitHub2} backward={true}/>
-        <Single title={this.state.title3} image={Image3} placeholder={placeholder} link={this.state.link3} text={projectText[3]} gitHub={this.state.gitHub3}/>
+        <Single id={0} title={this.state.title2} image={Image2} placeholder={placeholder} link={this.state.link2} text={projectText[2]} gitHub={this.state.gitHub2} backward={true}/>
+        <Single id={1} title={this.state.title3} image={Image3} placeholder={placeholder} link={this.state.link3} text={projectText[3]} gitHub={this.state.gitHub3}/>
 
         <Hero imageClassName={this.state.heroImg2}
         // heroText={heroText[2]}
         />
 
         <TitleBar category={this.state.category2} description={this.state.description2} />
-        <Single title={this.state.title4} image={Image4} placeholder={placeholder} text={projectText[4]} gitHub={this.state.gitHub4} backward={true}/>
-        <Single title={this.state.title5} image={Image5} placeholder={placeholder} text={projectText[5]} gitHub={this.state.gitHub5} />
+        <Single id={2} title={this.state.title4} image={Image4} placeholder={placeholder} text={projectText[4]} gitHub={this.state.gitHub4} backward={true}/>
+        <Single id={3} title={this.state.title5} image={Image5} placeholder={placeholder} text={projectText[5]} gitHub={this.state.gitHub5} />
       </div>
     );
   }
