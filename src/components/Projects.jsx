@@ -1,29 +1,29 @@
-import React, {Component} from 'react';
-import Hero from './Hero.jsx';
-import Single from './Single.jsx';
-import VideoSingle from './VideoSingle.jsx';
-import TitleBar from './TitleBar.jsx';
-import heroText from '../data/heroText.js';
-import projectText from '../data/projectText.js';
-import placeholder from '../styles/projectImages/responsive-design-dark-blue.png';
-import Image1 from '../styles/projectImages/EZ-tour.png';
-// import Video1 from 'https://s3.us-east-2.amazonaws.com/samsteelewebdevportfolio/trimmed-eztour-presentation2.mp4'
-import Image2 from '../styles/projectImages/slack-overflow.png';
-import Image3 from '../styles/projectImages/etsy.png';
-import Image4 from '../styles/projectImages/Code-snippet2.png';
-import Image5 from '../styles/projectImages/robot-linkedin.png';
-import Image6 from '../styles/projectImages/memory-game.png';
-import Image7 from '../styles/projectImages/bent-creek.png';
+import React, {Component} from "react";
+import Hero from "./Hero.jsx";
+import Single from "./Single.jsx";
+import VideoSingle from "./VideoSingle.jsx";
+import TitleBar from "./TitleBar.jsx";
+import heroText from "../data/heroText.js";
+import projectText from "../data/projectText.js";
+import placeholder from "../styles/projectImages/responsive-design-dark-blue.png";
+import Image1 from "../styles/projectImages/EZ-tour.png";
+import Image2 from "../styles/projectImages/slack-overflow.png";
+import Image3 from "../styles/projectImages/etsy.png";
+import Image4 from "../styles/projectImages/Code-snippet2.png";
+import Image5 from "../styles/projectImages/robot-linkedin.png";
+import Image6 from "../styles/projectImages/memory-game.png";
+import Image7 from "../styles/projectImages/bent-creek.png";
 
 export default class Projects extends Component {
-  constructor(props) {
-    super(props);
 
-    this.state = {
+  render() {
+
+    const strings = {
       heroImg1: "heroImg1",
       heroImg2: "heroImg2",
       heroImg3: "heroImg3",
-      video1: 'https://s3.us-east-2.amazonaws.com/samsteelewebdevportfolio/trimmed-eztour-presentation2.mp4',
+      videoM4a1: "https://s3.us-east-2.amazonaws.com/samsteelewebdevportfolio/trimmed-eztour-presentation2.mp4",
+      videoWebm1: "https://s3.us-east-2.amazonaws.com/samsteelewebdevportfolio/trimmed-eztour-presentation2.webm",
       title1: "EZ-Tour",
       title2: "Slack-overflow",
       title3: "Etsy",
@@ -48,25 +48,22 @@ export default class Projects extends Component {
       category3: "Front End Projects",
       description3: ""
     }
-  }
-
-  render() {
+  
     return (
       <div className="project">
-        <Hero imageClassName={this.state.heroImg1} heroText={heroText[1]}/>
+        <Hero imageClassName={strings.heroImg1} heroText={heroText[1]}/>
+        <TitleBar category={strings.category1} description={strings.description1} />
+        <VideoSingle id={0} title={strings.title1} videoM4a={strings.videoM4a1} videoWebm={strings.videoWebm1} image={Image1} placeholder={placeholder} link={strings.link1} text={projectText[1]} gitHub={strings.gitHub1}/>
+        <Single id={1} title={strings.title2} image={Image2} placeholder={placeholder} link={strings.link2} text={projectText[2]} gitHub={strings.gitHub2} backward={true}/>
+        <Single id={2} title={strings.title3} image={Image3} placeholder={placeholder} link={strings.link3} text={projectText[3]} gitHub={strings.gitHub3}/>
 
-        <TitleBar category={this.state.category1} description={this.state.description1} />
-        <VideoSingle title={this.state.title1} video={this.state.video1} image={Image1} placeholder={placeholder} link={this.state.link1} text={projectText[1]} gitHub={this.state.gitHub1}/>
-        <Single id={0} title={this.state.title2} image={Image2} placeholder={placeholder} link={this.state.link2} text={projectText[2]} gitHub={this.state.gitHub2} backward={true}/>
-        <Single id={1} title={this.state.title3} image={Image3} placeholder={placeholder} link={this.state.link3} text={projectText[3]} gitHub={this.state.gitHub3}/>
-
-        <Hero imageClassName={this.state.heroImg2}
+        <Hero imageClassName={strings.heroImg2}
         // heroText={heroText[2]}
         />
 
-        <TitleBar category={this.state.category2} description={this.state.description2} />
-        <Single id={2} title={this.state.title4} image={Image4} placeholder={placeholder} text={projectText[4]} gitHub={this.state.gitHub4} backward={true}/>
-        <Single id={3} title={this.state.title5} image={Image5} placeholder={placeholder} text={projectText[5]} gitHub={this.state.gitHub5} />
+        <TitleBar category={strings.category2} description={strings.description2} />
+        <Single id={3} title={strings.title4} image={Image4} placeholder={placeholder} text={projectText[4]} gitHub={strings.gitHub4} backward={true}/>
+        <Single id={4} title={strings.title5} image={Image5} placeholder={placeholder} text={projectText[5]} gitHub={strings.gitHub5} />
       </div>
     );
   }
