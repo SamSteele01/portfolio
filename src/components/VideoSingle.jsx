@@ -68,7 +68,8 @@ export default class VideoSingle extends Component {
     const {
       title,
       image,
-      video,
+      videoM4a,
+      videoWebm,
       placeholder,
       link,
       text,
@@ -93,7 +94,11 @@ export default class VideoSingle extends Component {
     let divVideo =
       <div className="flex-column">
         <div className="video-wrapper" onClick={this.videoClickHandler}>
-          <video src={video} poster={picture} alt="Video" controls ref="video" className={this.state.videoClassName}/>
+          <video poster={picture} alt="Video" controls ref="video" className={this.state.videoClassName}>
+            <source src={videoM4a} type="video/mp4" />
+            <source src={videoWebm} type="video/webm" />
+            Your browser does not support the video types.
+          </video>
           <svg className={this.state.svgClassName} viewBox="-70 -70 350 350" preserveAspectRatio="xMidYMid meet" alt="Play video">
             <circle cx="100" cy="100" r="90" fill="none" strokeWidth="15" stroke="#fff"/>
             <polygon points="70, 55 70, 145 145, 100" fill="#fff"/>
