@@ -24,17 +24,23 @@ export default class VideoSingle extends Component {
 
   setMedia() {
     this.setState({windowWidth: window.innerWidth});
+    let textContainer = document.getElementsByClassName("video-wrapper")[this.props.id];
+    let paragraphsElem = document.getElementsByClassName("paragraphs")[this.props.id];
+    if (textContainer !== undefined && paragraphsElem !== undefined){
+      const lineheight = textContainer.getBoundingClientRect();
+      const paragraphsElemHeight = paragraphsElem.getBoundingClientRect().height;
+      if (parseInt(lineheight.height, 10) < parseInt(paragraphsElemHeight, 10)){
+        this.setState({ initdropdown: true });
+      }
+      if (parseInt(lineheight.height, 10) > parseInt(paragraphsElemHeight, 10)){
+        this.setState({ initdropdown: false });
+      }
+    }
   }
 
   componentDidMount(){
+    this.setMedia();
     window.addEventListener("resize", this.setMedia);
-    let textContainer = document.getElementsByClassName('text-container')[0];
-    if (textContainer !== undefined && this.state.initdropdown === false){
-      const lineheight = document.defaultView.getComputedStyle(textContainer, null);
-      if (parseInt(lineheight.height, 10) > 150){
-        this.setState({ initdropdown: true });
-      }
-    }
   }
 
   videoClickHandler(event){
@@ -67,7 +73,7 @@ export default class VideoSingle extends Component {
       link,
       text,
       gitHub
-    } = this.props
+    } = this.props;
 
     let picture = "";
     if(image){
@@ -120,21 +126,23 @@ export default class VideoSingle extends Component {
 
     return (
       <div>
-        {(media < snapSize) ?
+        { (media < snapSize) ?
           <div className="single">
             <h3>{title}</h3>
             <div className="flex-column">
               {divVideo}
               {divText}
             </div>
-          </div> :
+          </div> 
+          :
           <div className="single">
             <h2>{title}</h2>
-            {this.props.backward ?
+            { this.props.backward ?
               <div className="flex-row">
                 {divText}
                 {divVideo}
-              </div> :
+              </div> 
+              :
               <div className="flex-row">
                 {divVideo}
                 {divText}

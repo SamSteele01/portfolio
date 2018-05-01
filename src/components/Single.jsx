@@ -66,7 +66,7 @@ export default class Single extends Component {
     }
 
     let paragraphs = (<div className="paragraphs"></div>);
-    let textPs = (<div></div>)
+    let textPs = (<div></div>);
 
     if(text){
       textPs = text.map((paragraph, index) =>{
