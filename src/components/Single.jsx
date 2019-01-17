@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from 'react';
+import React, {Component, PropTypes} from "react";
 const snapSize = 750;
 
 export default class Single extends Component {
@@ -18,8 +18,8 @@ export default class Single extends Component {
 
   setMedia() {
     this.setState({windowWidth: window.innerWidth});
-    let textContainer = document.getElementsByClassName('single-image')[this.props.id];
-    let paragraphsElem = document.getElementsByClassName('paragraphs')[this.props.id];
+    let textContainer = document.getElementsByClassName("single-image")[this.props.id];
+    let paragraphsElem = document.getElementsByClassName("paragraphs")[this.props.id];
     if (textContainer !== undefined && paragraphsElem !== undefined){
       const lineheight = textContainer.getBoundingClientRect();
       const paragraphsElemHeight = paragraphsElem.getBoundingClientRect().height;
@@ -56,7 +56,7 @@ export default class Single extends Component {
       link,
       text,
       gitHub
-    } = this.props
+    } = this.props;
 
     let picture = "";
     if(image){
@@ -70,9 +70,9 @@ export default class Single extends Component {
 
     if(text){
       textPs = text.map((paragraph, index) =>{
-        return( < p key={index} >{paragraph}</p> )
+        return( < p key={index} >{paragraph}</p> );
       });
-      paragraphs = (<div className="paragraphs">{textPs}</div>)
+      paragraphs = (<div className="paragraphs">{textPs}</div>);
     }
 
     let divImage =
@@ -81,11 +81,10 @@ export default class Single extends Component {
         {link &&
           <a href={link} target="_blank">See it deployed</a>
         }
-      </div>
+      </div>;
 
     let divText =
       <div className="text-container flex-column">
-        
         {this.state.initdropdown ? (
           <div>
             <div className={this.state.dropdownclassname}>
@@ -98,8 +97,10 @@ export default class Single extends Component {
             {paragraphs}
           </div>
         )}
-        <a href={gitHub} target="_blank">See the code on GitHub</a>
-      </div>
+        {gitHub &&
+          <a href={gitHub} target="_blank">See the code on GitHub</a>
+        }
+      </div>;
 
     return (
       <div>
