@@ -173,6 +173,7 @@ export default class VideoSingle extends Component {
 
     return (
       <div>
+        <hr />
         {media < snapSize ? (
           <div className="single">
             <h3>{title}</h3>
