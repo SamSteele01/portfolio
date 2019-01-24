@@ -8,7 +8,6 @@ module.exports = {
     // 'plugin:jest/recommended',
     // 'jest-enzyme',
     'eslint:recommended',
-    // 'plugin:prettier/recommended',
     'prettier/react',
     'prettier/standard',
     // 'react-app'
@@ -54,10 +53,6 @@ module.exports = {
     'react/no-did-mount-set-state': 'off',
     'react/no-unused-prop-types': 'off', // Is still buggy
     'react/jsx-one-expression-per-line': 'off',
-    // 'jsx-a11y/anchor-is-valid': [
-    //   'error',
-    //   { components: ['Link'], specialLink: ['to'] },
-    // ],
     'jsx-a11y/anchor-is-valid': [
       'warn',
       {
@@ -67,16 +62,6 @@ module.exports = {
       },
     ],
     'jsx-a11y/label-has-for': 'off',
-    // 'jsx-a11y/label-has-for': [
-    //   2,
-    //   {
-    //     components: ['Label'],
-    //     required: {
-    //       every: ['nesting', 'id'],
-    //     },
-    //     allowChildren: false,
-    //   },
-    // ], // for nested label htmlFor error
     'jsx-a11y/label-has-associated-control': [
       2,
       {
