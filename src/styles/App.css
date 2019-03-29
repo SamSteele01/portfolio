@@ -1,3 +1,14 @@
+@font-face {
+  font-family: 'pixeled';
+  src: url('../fonts/pixeled.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'minecraft';
+  src: url('../fonts/minecraft.ttf') format('truetype');
+}
+.pixeled-text {
+  font-family: 'minecraft', san-serif;
+}
 .App {
   text-align: center;
   position: relative;
