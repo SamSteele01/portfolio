@@ -1,17 +1,29 @@
 // $ node node_modules/less-watch-compile -w src/styles -o src/styles
 
+@font-face {
+  font-family: 'pixeled';
+  src: url('../fonts/pixeled.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'minecraft';
+  src: url('../fonts/minecraft.ttf') format('truetype');
+}
+
+.pixeled-text {
+  font-family: 'minecraft', san-serif;
+}
 .App {
   text-align: center;
   position: relative;
   // margin: -75px 0;
 }
 
-// db   db d88888b  .d8b.  d8888b. d88888b d8888b. 
-// 88   88 88'     d8' `8b 88  `8D 88'     88  `8D 
-// 88ooo88 88ooooo 88ooo88 88   88 88ooooo 88oobY' 
-// 88~~~88 88~~~~~ 88~~~88 88   88 88~~~~~ 88`8b   
-// 88   88 88.     88   88 88  .8D 88.     88 `88. 
-// YP   YP Y88888P YP   YP Y8888D' Y88888P 88   YD 
+// db   db d88888b  .d8b.  d8888b. d88888b d8888b.
+// 88   88 88'     d8' `8b 88  `8D 88'     88  `8D
+// 88ooo88 88ooooo 88ooo88 88   88 88ooooo 88oobY'
+// 88~~~88 88~~~~~ 88~~~88 88   88 88~~~~~ 88`8b
+// 88   88 88.     88   88 88  .8D 88.     88 `88.
+// YP   YP Y88888P YP   YP Y8888D' Y88888P 88   YD
 
 .App-logo {
   height: 75px;
@@ -19,18 +31,18 @@
 
 .App-header {
   background-color: #222c35;
-  border-bottom: 2px solid white;
+  // border-bottom: 2px solid white;
   height: 75px;
   width: 100%;
   position: bottom;
   top: 0px;
-  color: white;
+  color: #a3ccf3;
   z-index: 7;
   .flex-row;
   justify-content: space-between;
 }
 
-.take-Up-Space{
+.take-Up-Space {
   height: 75px;
   width: 118px;
 }
@@ -40,7 +52,7 @@
     top: 0;
     left: 0;
     right: 0;
-    z-Index: 7;
+    z-index: 7;
   }
   .headroom--unfixed {
     position: relative;
@@ -59,28 +71,28 @@
   }
 }
 
-.contact-button{
+.contact-button {
   align-self: center;
-  color: #A3CCF3;
+  color: #a3ccf3;
   font-size: 20px;
   background-color: #222c35;
   margin: 1rem;
-  padding: .5rem;
-  border: 1px solid #A3CCF3;
+  padding: 0.5rem;
+  border: 1px solid #a3ccf3;
   border-radius: 8px;
-  &:focus{
+  &:focus {
     outline: none;
   }
 }
 
-// .o88b.  .d88b.  d8b   db d888888b  .d8b.   .o88b. d888888b 
-// d8P  Y8 .8P  Y8. 888o  88 `~~88~~' d8' `8b d8P  Y8 `~~88~~' 
-// 8P      88    88 88V8o 88    88    88ooo88 8P         88    
-// 8b      88    88 88 V8o88    88    88~~~88 8b         88    
-// Y8b  d8 `8b  d8' 88  V888    88    88   88 Y8b  d8    88    
-//  `Y88P'  `Y88P'  VP   V8P    YP    YP   YP  `Y88P'    YP    
-                                                            
-.contact{
+// .o88b.  .d88b.  d8b   db d888888b  .d8b.   .o88b. d888888b
+// d8P  Y8 .8P  Y8. 888o  88 `~~88~~' d8' `8b d8P  Y8 `~~88~~'
+// 8P      88    88 88V8o 88    88    88ooo88 8P         88
+// 8b      88    88 88 V8o88    88    88~~~88 8b         88
+// Y8b  d8 `8b  d8' 88  V888    88    88   88 Y8b  d8    88
+//  `Y88P'  `Y88P'  VP   V8P    YP    YP   YP  `Y88P'    YP
+
+.contact {
   display: block;
   background-color: white;
   border: 2px solid #222c35;
@@ -89,12 +101,12 @@
   position: fixed;
   z-index: 6;
   margin: 0 10vw 0 10vw;
-  @media (max-width: 750px){
+  @media (max-width: 750px) {
     width: 64vw;
     height: 60vh;
     margin: 0 18vw;
   }
-  @media (max-width: 450px){
+  @media (max-width: 450px) {
     width: 80vw;
     height: 60vh;
     margin: 0 10vw;
@@ -105,51 +117,56 @@
   margin: 1rem;
   .flex-column;
   align-items: center;
-  & img{
+  & img {
     max-width: 32px;
     margin-top: 1rem;
   }
-  @media (max-width: 750px){
-    & p{
-      margin: .5rem;
+  @media (max-width: 750px) {
+    & p {
+      margin: 0.5rem;
     }
-    & img{
+    & img {
       max-height: 32px;
     }
   }
 }
 
-// d8888b. d8888b.  .d88b.     d88b d88888b  .o88b. d888888b 
-// 88  `8D 88  `8D .8P  Y8.    `8P' 88'     d8P  Y8 `~~88~~' 
-// 88oodD' 88oobY' 88    88     88  88ooooo 8P         88    
-// 88~~~   88`8b   88    88     88  88~~~~~ 8b         88    
-// 88      88 `88. `8b  d8' db. 88  88.     Y8b  d8    88    
-// 88      88   YD  `Y88P'  Y8888P  Y88888P  `Y88P'    YP    
+// d8888b. d8888b.  .d88b.     d88b d88888b  .o88b. d888888b
+// 88  `8D 88  `8D .8P  Y8.    `8P' 88'     d8P  Y8 `~~88~~'
+// 88oodD' 88oobY' 88    88     88  88ooooo 8P         88
+// 88~~~   88`8b   88    88     88  88~~~~~ 8b         88
+// 88      88 `88. `8b  d8' db. 88  88.     Y8b  d8    88
+// 88      88   YD  `Y88P'  Y8888P  Y88888P  `Y88P'    YP
 
 .project {
   z-index: 3;
 }
 
-.heroImg1 {
-  background-image: url('./heroImages/IMG_0200.jpg');
+.blockchain-image {
+  background-image: url('./heroImages/blockchain.jpg');
 }
-.heroImg2 {
-  background-image: url('./heroImages/IMG_0201.jpg');
+.eos-sf-pano {
+  background-image: url('./heroImages/eos-sf-pano.jpeg');
+  background-position: center;
 }
 .heroImg3 {
   background-image: url('./heroImages/IMG_0206.jpg');
 }
+.iron-yard-glass {
+  background-image: url('heroImages/IMG_0138.jpg');
+  background-position: center;
+}
 .hero-img {
-  height: 90vh;
+  height: 92vh;
   width: 100vw;
   background-repeat: no-repeat;
-  background-position: top;
+  // background-position: top;
   background-size: cover;
   background-attachment: fixed;
   z-index: 1;
   display: table-cell;
   vertical-align: middle;
-  & p{
+  & p {
     color: white;
     font-size: 9vw;
     background-attachment: fixed;
@@ -158,40 +175,49 @@
     z-index: 2;
   }
 }
+.pano-image {
+  width: 100%;
+  height: auto;
+  margin-left: -20px;
+}
 .title-bar {
-  height: 100px;
+  height: auto;
   padding: 1rem;
   position: relative;
   z-index: 5;
   color: #222c35;
   // background-color: rgb(185, 185, 197);
   background-color: white;
+  & p {
+    color: #777;
+  }
 }
 
-// .d8888. d888888b d8b   db  d888b  db      d88888b 
-// 88'  YP   `88'   888o  88 88' Y8b 88      88'     
-// `8bo.      88    88V8o 88 88      88      88ooooo 
-//   `Y8b.    88    88 V8o88 88  ooo 88      88~~~~~ 
-// db   8D   .88.   88  V888 88. ~8~ 88booo. 88.     
-// `8888Y' Y888888P VP   V8P  Y888P  Y88888P Y88888P 
+// .d8888. d888888b d8b   db  d888b  db      d88888b
+// 88'  YP   `88'   888o  88 88' Y8b 88      88'
+// `8bo.      88    88V8o 88 88      88      88ooooo
+//   `Y8b.    88    88 V8o88 88  ooo 88      88~~~~~
+// db   8D   .88.   88  V888 88. ~8~ 88booo. 88.
+// `8888Y' Y888888P VP   V8P  Y888P  Y88888P Y88888P
 
 .single {
   height: auto;
-  margin-bottom: 3rem;
-  padding: 1rem;
+  // margin-bottom: 3rem;
+  padding: 1rem 0;
   position: relative;
   z-index: 5;
   color: #222c35;
-  box-shadow: 4px 6px 16px 2px rgb(176, 176, 182)
+  // box-shadow: 4px 6px 16px 2px rgb(176, 176, 182);
 }
 
-.single-image {
-  height: 30vw;
-  width: 50vw;
+.single-img {
+  height: auto;
+  // width: 100vw;
+  width: auto;
   border: 1px solid black;
-  margin: 1rem;
-  flex-shrink: 0;
-  @media (max-width: 750px){
+  margin: 1rem 0;
+  flex-shrink: 1;
+  @media (max-width: 750px) {
     width: 90vw;
     height: 54vw;
   }
@@ -201,53 +227,91 @@
   flex-direction: row;
   justify-content: space-around;
 }
-.flex-column{
+.flex-column {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  font-size: 14px;
-  @media (max-width: 750px){
+  // font-size: 14px;
+  @media (max-width: 750px) {
     font-size: 2.6vw;
   }
-  @media (max-width: 450px){
+  @media (max-width: 450px) {
     font-size: 11px;
   }
-  & p{
+  & p {
     text-align: left;
     border: none;
   }
-  & a{
-  margin-top: 1rem;
+  & a {
+    margin-top: 1rem;
   }
 }
+.image-container {
+  width: 50vw;
+  padding: 0 10px;
+}
 
-// db    db d888888b d8888b. d88888b  .d88b.  
-// 88    88   `88'   88  `8D 88'     .8P  Y8. 
-// Y8    8P    88    88   88 88ooooo 88    88 
-// `8b  d8'    88    88   88 88~~~~~ 88    88 
-//  `8bd8'    .88.   88  .8D 88.     `8b  d8' 
-//    YP    Y888888P Y8888D' Y88888P  `Y88P'  
+// db    db d888888b d8888b. d88888b  .d88b.
+// 88    88   `88'   88  `8D 88'     .8P  Y8.
+// Y8    8P    88    88   88 88ooooo 88    88
+// `8b  d8'    88    88   88 88~~~~~ 88    88
+//  `8bd8'    .88.   88  .8D 88.     `8b  d8'
+//    YP    Y888888P Y8888D' Y88888P  `Y88P'
 
 .video-wrapper {
   position: relative;
-  margin: 1rem;
+  margin: 1rem 0;
+}
+
+@media (min-width: 480px) {
+  .single {
+    padding: 1rem;
+  }
+  .single img {
+    margin: 1rem;
+    height: 54vw;
+    width: 90vw;
+  }
+  .video-wrapper {
+    margin: 1rem;
+  }
+  .video-wrapper > video {
+    height: 54vw;
+    width: 90vw;
+  }
+}
+@media (min-width: 750px) {
+  .single img {
+    margin: 1rem;
+    height: 30vw;
+    // width: 50vw;
+    width: auto;
+  }
+  .video-wrapper {
+    margin: 1rem;
+  }
+  .video-wrapper > video {
+    height: 30vw;
+    // width: 50vw;
+    width: auto;
+  }
 }
 
 .video-wrapper:hover .video-hover-span {
   visibility: visible;
 }
 
-.video-wrapper > video {
-  height: 30vw;
-  width: 50vw;
-  border: 1px solid black; 
-  flex-shrink: 0;
-  @media (max-width: 750px){
-    width: 90vw;
-    height: 54vw;
-  }
-}
+// .video-wrapper > video {
+//   height: 30vw;
+//   width: 50vw;
+//   border: 1px solid black;
+//   flex-shrink: 0;
+//   @media (max-width: 750px) {
+//     width: 90vw;
+//     height: 54vw;
+//   }
+// }
 
 .video-wrapper > video.has-media-controls-hidden::-webkit-media-controls {
   display: none;
@@ -280,7 +344,7 @@
   border-radius: 6px;
   bottom: 0;
   margin: 0 8vw;
-  @media (max-width: 750px){
+  @media (max-width: 750px) {
     width: 70vw;
     margin: 0 10vw;
   }
@@ -291,7 +355,7 @@
 }
 
 .video-overlay-play-button:hover {
-  opacity: .6;
+  opacity: 0.6;
 }
 
 .video-overlay-play-button.is-hidden {
@@ -301,15 +365,15 @@
   }
 }
 
-// d888888b d88888b db    db d888888b 
-// `~~88~~' 88'     `8b  d8' `~~88~~' 
-//    88    88ooooo  `8bd8'     88    
-//    88    88~~~~~  .dPYb.     88    
-//    88    88.     .8P  Y8.    88    
-//    YP    Y88888P YP    YP    YP    
+// d888888b d88888b db    db d888888b
+// `~~88~~' 88'     `8b  d8' `~~88~~'
+//    88    88ooooo  `8bd8'     88
+//    88    88~~~~~  .dPYb.     88
+//    88    88.     .8P  Y8.    88
+//    YP    Y88888P YP    YP    YP
 
-.text-container{
-  color: rgb(73, 73, 77);
+.text-container {
+  color: #777;
   padding: 0 3vw;
   height: auto;
   font-family: 'Lato', 'Arial', sans-serif;
@@ -317,32 +381,32 @@
   // border-bottom: solid 1px #efefeb;
 }
 
-.text-container-minimized{
+.text-container-minimized {
   overflow: hidden;
   height: 30vw + 2em;
-  position:relative;
+  position: relative;
   text-align: left;
-  -webkit-box-shadow: inset 0px -70px 30px -30px rgba(255,255,255,1);
-  -moz-box-shadow: inset 0px -70px 30px -30px rgba(255,255,255,1);
-  box-shadow: inset 0px -70px 30px -30px rgba(255,255,255,1);
+  -webkit-box-shadow: inset 0px -70px 30px -30px rgba(255, 255, 255, 1);
+  -moz-box-shadow: inset 0px -70px 30px -30px rgba(255, 255, 255, 1);
+  box-shadow: inset 0px -70px 30px -30px rgba(255, 255, 255, 1);
 }
 
 .text-container-minimized:before {
-  content:'';
-  width:100%;
-  height:100%;
+  content: '';
+  width: 100%;
+  height: 100%;
   position: absolute;
-  
-  -webkit-box-shadow: inset 0px -70px 30px -30px rgba(255,255,255,1);
-  -moz-box-shadow: inset 0px -70px 30px -30px rgba(255,255,255,1);
-  box-shadow: inset 0px -70px 30px -30px rgba(255,255,255,1);
+
+  -webkit-box-shadow: inset 0px -70px 30px -30px rgba(255, 255, 255, 1);
+  -moz-box-shadow: inset 0px -70px 30px -30px rgba(255, 255, 255, 1);
+  box-shadow: inset 0px -70px 30px -30px rgba(255, 255, 255, 1);
 }
 
 .text-container-full {
   height: auto;
 }
 
-.text-container button{
+.text-container button {
   font-family: Arial;
   color: #f45800;
   font-size: 14px;
@@ -351,10 +415,10 @@
   text-decoration: none;
 }
 
-.text-container button:focus{
+.text-container button:focus {
   outline: none;
 }
-.text-container button:hover{
+.text-container button:hover {
   text-decoration: underline;
   opacity: 1;
 }
@@ -363,7 +427,7 @@
   height: auto;
 }
 
-.details-header{
+.details-header {
   font-size: 16px;
   font-weight: bold;
   color: black;
@@ -373,13 +437,12 @@
   padding: 10px;
 }
 
-
-// d888888b  .d88b.   .d88b.  db      d8888b. d88888b db      d888888b 
-// `~~88~~' .8P  Y8. .8P  Y8. 88      88  `8D 88'     88      `~~88~~' 
-//    88    88    88 88    88 88      88oooY' 88ooooo 88         88    
-//    88    88    88 88    88 88      88~~~b. 88~~~~~ 88         88    
-//    88    `8b  d8' `8b  d8' 88booo. 88   8D 88.     88booo.    88    
-//    YP     `Y88P'   `Y88P'  Y88888P Y8888P' Y88888P Y88888P    YP    
+// d888888b  .d88b.   .d88b.  db      d8888b. d88888b db      d888888b
+// `~~88~~' .8P  Y8. .8P  Y8. 88      88  `8D 88'     88      `~~88~~'
+//    88    88    88 88    88 88      88oooY' 88ooooo 88         88
+//    88    88    88 88    88 88      88~~~b. 88~~~~~ 88         88
+//    88    `8b  d8' `8b  d8' 88booo. 88   8D 88.     88booo.    88
+//    YP     `Y88P'   `Y88P'  Y88888P Y8888P' Y88888P Y88888P    YP
 
 .title {
   margin-bottom: 24px;
@@ -428,7 +491,7 @@
       &:hover::after {
         content: attr(data-name);
         position: absolute;
-        background: rgba(0,0,0,0.75);
+        background: rgba(0, 0, 0, 0.75);
         padding: 10px 20px;
         border-radius: 5px;
         bottom: -45px;
@@ -440,7 +503,7 @@
       }
       img {
         width: 100px;
-        transition: transform .5s, opacity .3s;
+        transition: transform 0.5s, opacity 0.3s;
         &:hover {
           transform: scale(1.1);
         }
@@ -456,31 +519,31 @@
 
 @media (max-width: 641px) {
   .skills-container {
-      .skill-list {
-        .skill {
+    .skill-list {
+      .skill {
+        width: 64px;
+        margin: 0 2px -17px 2px;
+        img {
           width: 64px;
-          margin: 0 2px -17px 2px;
-          img {
-            width: 64px;
-          }
         }
       }
     }
+  }
 }
 
-// d88888b  .d88b.   .d88b.  d888888b d88888b d8888b. 
-// 88'     .8P  Y8. .8P  Y8. `~~88~~' 88'     88  `8D 
-// 88ooo   88    88 88    88    88    88ooooo 88oobY' 
-// 88~~~   88    88 88    88    88    88~~~~~ 88`8b   
-// 88      `8b  d8' `8b  d8'    88    88.     88 `88. 
-// YP       `Y88P'   `Y88P'     YP    Y88888P 88   YD 
+// d88888b  .d88b.   .d88b.  d888888b d88888b d8888b.
+// 88'     .8P  Y8. .8P  Y8. `~~88~~' 88'     88  `8D
+// 88ooo   88    88 88    88    88    88ooooo 88oobY'
+// 88~~~   88    88 88    88    88    88~~~~~ 88`8b
+// 88      `8b  d8' `8b  d8'    88    88.     88 `88.
+// YP       `Y88P'   `Y88P'     YP    Y88888P 88   YD
 
 .footer-wrapper {
   .headroom {
     bottom: 0;
     left: 0;
     right: 0;
-    z-Index: 7;
+    z-index: 7;
   }
   .headroom--unfixed {
     position: relative;
@@ -501,7 +564,7 @@
 
 .footer {
   background-color: #222c35;
-  border-top: 2px solid white;
+  // border-top: 2px solid white;
   height: 45px;
   width: 100%;
   display: flex;
