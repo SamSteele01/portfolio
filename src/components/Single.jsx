@@ -19,6 +19,15 @@ export default class Single extends Component {
     this.setMedia = this.setMedia.bind(this);
   }
 
+  componentDidMount() {
+    this.setMedia();
+    window.addEventListener('resize', this.setMedia);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.setMedia);
+  }
+
   setMedia() {
     this.setState({ windowWidth: window.innerWidth });
     let textContainer = document.getElementsByClassName('single-image')[
@@ -42,11 +51,6 @@ export default class Single extends Component {
         this.setState({ initdropdown: false });
       }
     }
-  }
-
-  componentDidMount() {
-    this.setMedia();
-    window.addEventListener('resize', this.setMedia);
   }
 
   handledropdown(event) {
@@ -87,7 +91,7 @@ export default class Single extends Component {
     }
 
     let divImage = (
-      <div className="flex-column">
+      <div className="image-container flex-column">
         <img
           src={picture}
           alt="screenshot of application"
