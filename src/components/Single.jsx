@@ -1,16 +1,28 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import ImageLoader from 'react-load-image';
 
 import placeholder from '../styles/projectImages/responsive-design-dark-blue.png';
 
 const snapSize = 750;
 
 export default class Single extends Component {
+  static propTypes = {
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    image: PropTypes.any,
+    text: PropTypes.array.isRequired,
+    link: PropTypes.string,
+    gitHub: PropTypes.string,
+    backward: PropTypes.bool,
+  };
+
   constructor(props) {
     super(props);
 
     this.state = {
       windowWidth: window.innerWidth,
-      mobileView: false,
+      // mobileView: false,
       initdropdown: false,
       dropdownclassname: 'text-container-minimized',
       dropDownButtonText: 'v More',
@@ -20,8 +32,9 @@ export default class Single extends Component {
   }
 
   componentDidMount() {
-    this.setMedia();
+    // window.addEventListener('onload', this.setMedia);
     window.addEventListener('resize', this.setMedia);
+    // this.setMedia();
   }
 
   componentWillUnmount() {
@@ -29,25 +42,24 @@ export default class Single extends Component {
   }
 
   setMedia() {
+    // console.log('loading', this.props.id);
     this.setState({ windowWidth: window.innerWidth });
-    let textContainer = document.getElementsByClassName('single-image')[
+    let imageContainer = document.getElementsByClassName('single-image')[
       this.props.id
     ];
     let paragraphsElem = document.getElementsByClassName('paragraphs')[
       this.props.id
     ];
-    if (textContainer !== undefined && paragraphsElem !== undefined) {
-      const lineheight = textContainer.getBoundingClientRect();
+    if (imageContainer !== undefined && paragraphsElem !== undefined) {
+      const imageheight = imageContainer.getBoundingClientRect().height;
+      // console.log(this.props.id, 'image LINEHEIGHT', imageheight);
       const paragraphsElemHeight = paragraphsElem.getBoundingClientRect()
         .height;
-      if (
-        parseInt(lineheight.height, 10) < parseInt(paragraphsElemHeight, 10)
-      ) {
+      // console.log(this.props.id, 'PARAGRAPHSELEMHEIGHT', paragraphsElemHeight);
+      if (parseInt(imageheight, 10) < parseInt(paragraphsElemHeight, 10)) {
         this.setState({ initdropdown: true });
       }
-      if (
-        parseInt(lineheight.height, 10) > parseInt(paragraphsElemHeight, 10)
-      ) {
+      if (parseInt(imageheight, 10) > parseInt(paragraphsElemHeight, 10)) {
         this.setState({ initdropdown: false });
       }
     }
@@ -92,11 +104,16 @@ export default class Single extends Component {
 
     let divImage = (
       <div className="image-container flex-column">
-        <img
+        <ImageLoader src={picture} onLoad={this.setMedia}>
+          <img className="single-image" />
+          <div>Error!</div>
+          {/* <Preloader /> */}
+        </ImageLoader>
+        {/* <img
           src={picture}
           alt="screenshot of application"
           className="single-image"
-        />
+        /> */}
         {link && (
           <a href={link} target="_blank">
             See it deployed
