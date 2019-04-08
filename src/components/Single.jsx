@@ -108,6 +108,7 @@ export default class Single extends Component {
           <img className="single-image" />
           <div>Error!</div>
           {/* <Preloader /> */}
+          <div>Loading...</div>
         </ImageLoader>
         {/* <img
           src={picture}
