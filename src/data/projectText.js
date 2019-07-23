@@ -98,5 +98,15 @@ const projectText = {
     'A value validation project for Zeppelin build using React and D3. D3 has a plethora of options for displaying data, but the more impressive ones need that data to be in hierarchical format. i.e. parent-child. Most of the time spent was in writing algorithms that parse the Zeppelin node modules, read the import statements of the Solidity files, and convert the data to the formats needed for the chart.',
     'The chart is an html canvas element. This exists outside React’s virtual DOM. That means that changes to props or state don’t automatically cause a change on the screen as you would expect. You have to detect the changes with componentDidUpdate and call a draw() function to re-render the canvas. I added a toggle button and two sliders to get some interactivity. The sliders are from Material UI’s lab, which means that they are still experimental. ',
   ],
-];
+  fractals: ['Cool cool'],
+  theIronYard:
+    'The Iron Yard is a 12-week coding boot camp for web development \
+    specializing in highly focused, immersive training centered on language \
+    fluency, object-oriented programming, and project-based learning. Team \
+    projects using GitHub, Trello, and an Agile methodology. There was a \
+    final project that took an additional month. My two biggest \
+    takaways were learning how to Google my way through any problem and \
+    getting use to writing code for 60 hours a week. The following are \
+    the team projects that I helped build.',
+};
 export default projectText;

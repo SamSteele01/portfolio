@@ -1,55 +1,65 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 import Hero from './Hero.jsx';
 import Single from './Single.jsx';
 import VideoSingle from './VideoSingle.jsx';
+import CarouselSingle from './CarouselSingle';
 import TitleBar from './TitleBar.jsx';
+
 import heroText from '../data/heroText.js';
 import projectText from '../data/projectText.js';
-import placeholder from '../styles/projectImages/responsive-design-dark-blue.png';
+import { links } from '../data/links';
+
+import blocX from '../styles/projectImages/blocX-demo-screenshot.png';
+import contractVis from '../styles/projectImages/zeppelin-contract-vis.png';
 import Image1 from '../styles/projectImages/EZ-tour.png';
 import Image2 from '../styles/projectImages/slack-overflow.png';
 import Image3 from '../styles/projectImages/etsy.png';
-import Image4 from '../styles/projectImages/Code-snippet2.png';
-import Image5 from '../styles/projectImages/robot-linkedin.png';
+// import Image4 from '../styles/projectImages/Code-snippet2.png';
+// import Image5 from '../styles/projectImages/robot-linkedin.png';
 import Image6 from '../styles/projectImages/logo.png';
 import Image7 from '../styles/projectImages/Payment-gateway.png';
 
-export default class Projects extends React.Component {
-  render() {
-    const strings = {
-      heroImg3: 'heroImg3',
-      videoM4a2:
-        'https://s3.us-east-2.amazonaws.com/samsteelewebdevportfolio/Pitch+Video+R2D1.mov',
-      videoM4a1:
-        'https://s3.us-east-2.amazonaws.com/samsteelewebdevportfolio/trimmed-eztour-presentation2.mp4',
-      videoWebm1:
-        'https://s3.us-east-2.amazonaws.com/samsteelewebdevportfolio/trimmed-eztour-presentation2.webm',
-      // title6: 'Memory game',
-      link1: 'https://eztour.herokuapp.com/',
-      link2: 'https://blooming-shore-88321.herokuapp.com/',
-      link3: 'https://tiy-durham-etsy-project.github.io/Etsy-group-project/',
-      link6: 'https://travel.booklocal.in/',
-      gitHub1: 'https://github.com/SamSteele01/Final_Project',
-      gitHub2:
-        'https://github.com/TIY-Durham-Slackoverflow-project/Slackoverflow',
-      gitHub3:
-        'https://github.com/TIY-Durham-Etsy-project/Etsy-group-project/tree/master',
-      gitHub4: 'https://github.com/SamSteele01/Robot-LinkedIn',
-      gitHub5: 'https://github.com/SamSteele01/Code-snippet-organizer',
-      gitHub6: 'https://github.com/SamSteele01/memory-game',
-      gitHub7: 'https://github.com/SamSteele01/Week-one-project',
-      description1: 'Using GitHub, Trello, and an Agile methodology',
-      category2: 'Back End Projects',
-      description2: '',
-      category3: 'Front End Projects',
-      description3: '',
-    };
+import eosHackathonImage from '../styles/heroImages/eos-sf-pano2.jpg';
+import bufficorn from '../styles/hackathonImages/bufficorn.jpeg';
+import foodTruck from '../styles/hackathonImages/food-truck-qr.jpeg';
+import smsDiagram from '../styles/hackathonImages/SMS-protocol-DB.png';
+import wyoRoom from '../styles/hackathonImages/wyoHack-room.jpg';
+import wyoTable from '../styles/hackathonImages/wyoHackathon-table.jpg';
+import dcc from '../styles/hackathonImages/dcc-diagram.png';
+import wyoPitch from '../styles/hackathonImages/WyoHackathon-final-pitch-1.jpeg';
+import wyoStage from '../styles/hackathonImages/wyohackathon-stage.jpeg';
 
-    return (
-      <div className="project">
-        <Hero imageClassName="heroImg1" heroText={heroText[1]} />
+export default function Projects() {
+  return (
+    <div className="project">
+      <Hero imageClassName="blockchain-image" />
+      <TitleBar category="Blockchain" description={projectText.blockchain} />
+      <Single
+        id={0}
+        title="BlocX Demo Wallet"
+        image={blocX}
+        link="http://blocx-demo-wallet.s3-website-us-east-1.amazonaws.com/"
+        text={projectText.blocX}
+      />
+      <Single
+        id={1}
+        title="Cryptocurrency Payment Gateway"
+        image={Image7}
+        text={projectText.vendible}
+        backward={true}
+      />
+      <VideoSingle
+        id={0}
+        title="BookLocal"
+        videoM4a={links.videoM4a2}
+        // videoWebm={links.videoWebm1}
+        image={Image6}
+        hoverMessage="Watch the demo video"
+        link={links.link6}
+        text={projectText.booklocal}
+      />
 
       <TitleBar category="Hackathons" description={projectText.hackathons} />
 
@@ -74,7 +84,26 @@ export default class Projects extends React.Component {
       />
       {/* EthMemphis */}
 
-        <Hero imageClassName="iron-yard-glass" />
+      <TitleBar category="Hackathons" description="uh ..." />
+      {/* EthDenver */}
+      <CarouselSingle
+        id={0}
+        title="EthDenver 2019"
+        images={[bufficorn, smsDiagram, foodTruck]}
+        text={projectText.ethDenver}
+        backward={true}
+      />
+      {/* WyoHackathon */}
+      <CarouselSingle
+        id={1}
+        title="WyoHackathon 2018"
+        images={[wyoRoom, wyoTable, dcc, wyoPitch, wyoStage]}
+        text={projectText.wyoHackathon}
+        // backward={true}
+      />
+      {/* EthMemphis */}
+
+      <Hero imageClassName="react-code-screen" />
 
       <TitleBar
         category="Practice Projects"
@@ -97,16 +126,41 @@ export default class Projects extends React.Component {
           image={contractVis}
           text={projectText.fractals}
           backward={true}
-        />
-        <Single
-          id={2}
-          title="Etsy"
-          image={Image3}
-          placeholder={placeholder}
-          link={strings.link3}
-          text={projectText[3]}
-          gitHub={strings.gitHub3}
-        />
+        /> */}
+
+      <Hero imageClassName="iron-yard-glass" />
+      <TitleBar
+        category="The Iron Yard"
+        description={projectText.theIronYard}
+      />
+      <VideoSingle
+        id={1}
+        title="EZ-Tour"
+        videoM4a={links.videoM4a1}
+        videoWebm={links.videoWebm1}
+        image={Image1}
+        hoverMessage="See our presentation from demo day"
+        link={links.link1}
+        text={projectText.ezTour}
+        gitHub={links.gitHub1}
+      />
+      <Single
+        id={3}
+        title="Slack-overflow"
+        image={Image2}
+        link={links.link2}
+        text={projectText.slackOverflow}
+        gitHub={links.gitHub2}
+        backward={true}
+      />
+      <Single
+        id={4}
+        title="Etsy"
+        image={Image3}
+        link={links.link3}
+        text={projectText.etsy}
+        gitHub={links.gitHub3}
+      />
 
       {/* Memory game */}
     </div>

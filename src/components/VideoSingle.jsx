@@ -1,9 +1,23 @@
-import React, { Component, PropTypes } from 'react';
-import $ from 'jquery';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 // import placeholder from '../styles/responsive-design-dark-blue.png';
 const snapSize = 750;
 
 export default class VideoSingle extends Component {
+  static propTypes = {
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    videoM4a: PropTypes.string.isRequired,
+    videoWebm: PropTypes.string,
+    image: PropTypes.string,
+    hoverMessage: PropTypes.string,
+    text: PropTypes.array.isRequired,
+    link: PropTypes.string,
+    gitHub: PropTypes.string,
+    backward: PropTypes.bool,
+  };
+
   constructor(props) {
     super(props);
 
@@ -27,7 +41,7 @@ export default class VideoSingle extends Component {
     let textContainer = document.getElementsByClassName('video-wrapper')[
       this.props.id
     ];
-    let paragraphsElem = document.getElementsByClassName('paragraph')[
+    let paragraphsElem = document.getElementsByClassName('video-paragraph')[
       this.props.id
     ];
     if (textContainer !== undefined && paragraphsElem !== undefined) {
@@ -99,14 +113,14 @@ export default class VideoSingle extends Component {
       picture = placeholder;
     }
 
-    let paragraphs = <div className="paragraphs" />;
+    let paragraphs = <div className="video-paragraph" />;
     let textPs = <div />;
 
     if (text) {
       textPs = text.map((paragraph, index) => {
         return <p key={index}>{paragraph}</p>;
       });
-      paragraphs = <div className="paragraph">{textPs}</div>;
+      paragraphs = <div className="video-paragraph">{textPs}</div>;
     }
 
     let divVideo = (
@@ -202,10 +216,3 @@ export default class VideoSingle extends Component {
     );
   }
 }
-
-VideoSingle.propTypes = {
-  // title:
-  // image:
-  // placeholder:
-  // text:
-};

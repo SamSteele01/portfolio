@@ -1,19 +1,16 @@
-import React, {Component} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-export default class Hero extends Component {
-  render() {
+Hero.propTypes = {
+  imageClassName: PropTypes.string,
+  heroText: PropTypes.string,
+  height: PropTypes.number,
+};
 
-    const {
-      imageClassName,
-      heroText
-    } = this.props
-
-    return (
-      <div className={`hero-img ${imageClassName}`}>
-        {/* <p className="hero-text">{this.props.heroText}</p> */}
-        <p>{heroText}</p>
-      </div>
-    );
+export default function Hero({ imageClassName, heroText, height }) {
+  let heroHeight = height;
+  if (window.innerWidth < 450) {
+    heroHeight = 60;
   }
   return (
     <div
@@ -25,7 +22,3 @@ export default class Hero extends Component {
     </div>
   );
 }
-
-Hero.propTypes = {
-  // imagePath:
-};

@@ -26,13 +26,18 @@
 // YP   YP Y88888P YP   YP Y8888D' Y88888P 88   YD
 
 .App-logo {
-  height: 75px;
+  height: auto;
+  max-width: 30vw;
+  @media (min-width: 450px) {
+    height: 75px;
+    width: auto;
+  }
 }
 
 .App-header {
   background-color: #222c35;
   // border-bottom: 2px solid white;
-  height: 75px;
+  height: 60px;
   width: 100%;
   position: bottom;
   top: 0px;
@@ -40,6 +45,16 @@
   z-index: 7;
   .flex-row;
   justify-content: space-between;
+  align-items: center;
+  & h1 {
+    font-size: 1em;
+  }
+  @media (min-width: 450px) {
+    height: 75px;
+    & h1 {
+      font-size: 2em;
+    }
+  }
 }
 
 .take-Up-Space {
@@ -72,9 +87,9 @@
 }
 
 .contact-button {
+  font-size: 12px;
   align-self: center;
   color: #a3ccf3;
-  font-size: 20px;
   background-color: #222c35;
   margin: 1rem;
   padding: 0.5rem;
@@ -82,6 +97,9 @@
   border-radius: 8px;
   &:focus {
     outline: none;
+  }
+  @media (min-width: 450px) {
+    font-size: 20px;
   }
 }
 
@@ -280,17 +298,36 @@
   // box-shadow: 4px 6px 16px 2px rgb(176, 176, 182);
 }
 
-.single-img {
-  height: auto;
-  // width: 100vw;
-  width: auto;
-  border: 1px solid black;
-  margin: 1rem 0;
-  flex-shrink: 1;
-  @media (max-width: 750px) {
-    width: 90vw;
-    height: 54vw;
+@media (min-width: 480px) {
+  .single {
+    padding: 1rem;
   }
+  .single img {
+    // margin: 1rem;
+    height: 54vw;
+    width: 90vw;
+  }
+}
+
+@media (min-width: 750px) {
+  .single img {
+    // margin: 1rem;
+    height: auto;
+    width: 100%;
+  }
+}
+
+.single-image {
+  height: auto;
+  max-width: 90vw;
+  // width: auto;
+  // border: 1px solid black;
+  // margin: 1rem 0;
+  // flex-shrink: 1;
+  // @media (min-width: 750px) {
+  //   width: 50vw;
+  //   height: 54vw;
+  // }
 }
 .flex-row {
   display: flex;
@@ -318,8 +355,12 @@
   }
 }
 .image-container {
-  width: 50vw;
+  width: 90vw;
   padding: 0 10px;
+  margin: 1rem;
+  @media (min-width: 750px) {
+    width: 50vw;
+  }
 }
 
 // db    db d888888b d8888b. d88888b  .d88b.
@@ -333,16 +374,12 @@
   position: relative;
   margin: 1rem 0;
 }
+.video-wrapper > video {
+  height: auto;
+  max-width: 90vw;
+}
 
 @media (min-width: 480px) {
-  .single {
-    padding: 1rem;
-  }
-  .single img {
-    margin: 1rem;
-    height: 54vw;
-    width: 90vw;
-  }
   .video-wrapper {
     margin: 1rem;
   }
@@ -350,20 +387,25 @@
     height: 54vw;
     width: 90vw;
   }
+  // .carousel img {
+  //   // margin: 1rem;
+  //   height: 54vw;
+  //   width: 90vw;
+  // }
 }
 @media (min-width: 750px) {
-  .single img {
-    margin: 1rem;
-    height: 30vw;
-    // width: 50vw;
-    width: auto;
-  }
   .video-wrapper {
     margin: 1rem;
   }
   .video-wrapper > video {
+    // height: 30vw;
+    // width: auto;
+    height: auto;
+    width: 50vw;
+  }
+  .carousel img {
+    // margin: 1rem;
     height: 30vw;
-    // width: 50vw;
     width: auto;
   }
 }
@@ -435,6 +477,35 @@
   }
 }
 
+// .o88b.  .d8b.  d8888b.  .d88b.  db    db .d8888. d88888b db
+// d8P  Y8 d8' `8b 88  `8D .8P  Y8. 88    88 88'  YP 88'     88
+// 8P      88ooo88 88oobY' 88    88 88    88 `8bo.   88ooooo 88
+// 8b      88~~~88 88`8b   88    88 88    88   `Y8b. 88~~~~~ 88
+// Y8b  d8 88   88 88 `88. `8b  d8' 88b  d88 db   8D 88.     88booo.
+// `Y88P' YP   YP 88   YD  `Y88P'  ~Y8888P' `8888Y' Y88888P Y88888P
+
+.carousel {
+  position: relative;
+  margin: 1rem 0;
+}
+
+@media (min-width: 480px) {
+  .carousel img {
+    // margin: 1rem;
+    height: auto;
+    width: 90vw;
+  }
+}
+@media (min-width: 750px) {
+  .carousel img {
+    // margin: 1rem;
+    // height: 30vw;
+    // width: auto;
+    height: auto;
+    width: 50vw;
+  }
+}
+
 // d888888b d88888b db    db d888888b
 // `~~88~~' 88'     `8b  d8' `~~88~~'
 //    88    88ooooo  `8bd8'     88
@@ -443,6 +514,7 @@
 //    YP    Y88888P YP    YP    YP
 
 .text-container {
+  width: 50vw;
   color: #777;
   padding: 0 3vw;
   height: auto;

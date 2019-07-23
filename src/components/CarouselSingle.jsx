@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import ImageLoader from 'react-load-image';
+import { Carousel } from 'react-responsive-carousel';
 
-import placeholder from '../styles/projectImages/responsive-design-dark-blue.png';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 const snapSize = 750;
 
-export default class Single extends Component {
+export default class CarouselSingle extends Component {
   static propTypes = {
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
-    image: PropTypes.any,
+    images: PropTypes.array.isRequired,
     text: PropTypes.array.isRequired,
     link: PropTypes.string,
     gitHub: PropTypes.string,
@@ -22,7 +22,7 @@ export default class Single extends Component {
 
     this.state = {
       windowWidth: window.innerWidth,
-      // mobileView: false,
+      mobileView: false,
       initdropdown: false,
       dropdownclassname: 'text-container-minimized',
       dropDownButtonText: 'v More',
@@ -32,9 +32,8 @@ export default class Single extends Component {
   }
 
   componentDidMount() {
-    // window.addEventListener('onload', this.setMedia);
+    this.setMedia();
     window.addEventListener('resize', this.setMedia);
-    // this.setMedia();
   }
 
   componentWillUnmount() {
@@ -42,24 +41,25 @@ export default class Single extends Component {
   }
 
   setMedia() {
-    // console.log('loading', this.props.id);
     this.setState({ windowWidth: window.innerWidth });
-    let imageContainer = document.getElementsByClassName('single-image')[
+    let textContainer = document.getElementsByClassName('single-image')[
       this.props.id
     ];
-    let paragraphsElem = document.getElementsByClassName('paragraphs')[
+    let paragraphsElem = document.getElementsByClassName('carousel-paragraphs')[
       this.props.id
     ];
-    if (imageContainer !== undefined && paragraphsElem !== undefined) {
-      const imageheight = imageContainer.getBoundingClientRect().height;
-      // console.log(this.props.id, 'image LINEHEIGHT', imageheight);
+    if (textContainer !== undefined && paragraphsElem !== undefined) {
+      const lineheight = textContainer.getBoundingClientRect();
       const paragraphsElemHeight = paragraphsElem.getBoundingClientRect()
         .height;
-      // console.log(this.props.id, 'PARAGRAPHSELEMHEIGHT', paragraphsElemHeight);
-      if (parseInt(imageheight, 10) < parseInt(paragraphsElemHeight, 10)) {
+      if (
+        parseInt(lineheight.height, 10) < parseInt(paragraphsElemHeight, 10)
+      ) {
         this.setState({ initdropdown: true });
       }
-      if (parseInt(imageheight, 10) > parseInt(paragraphsElemHeight, 10)) {
+      if (
+        parseInt(lineheight.height, 10) > parseInt(paragraphsElemHeight, 10)
+      ) {
         this.setState({ initdropdown: false });
       }
     }
@@ -83,43 +83,37 @@ export default class Single extends Component {
   render() {
     let media = this.state.windowWidth;
 
-    const { title, image, link, text, gitHub } = this.props;
+    const { title, images, link, text, gitHub } = this.props;
 
-    let picture = '';
-    if (image) {
-      picture = image;
-    } else {
-      picture = placeholder;
-    }
-
-    let paragraphs = <div className="paragraphs" />;
+    let paragraphs = <div className="carousel-paragraphs" />;
     let textPs = <div />;
 
     if (text) {
       textPs = text.map((paragraph, index) => {
         return <p key={index}>{paragraph}</p>;
       });
-      paragraphs = <div className="paragraphs">{textPs}</div>;
+      paragraphs = <div className="carousel-paragraphs">{textPs}</div>;
     }
 
-    let divImage = (
+    let carouselImages = images.map(image => {
+      return (
+        <div className="single-image">
+          <img src={image} />
+        </div>
+      );
+    });
+
+    let divCarousel = (
       <div className="image-container flex-column">
-        <ImageLoader src={picture} onLoad={this.setMedia}>
-          <img className="single-image" />
-          <div>Error!</div>
-          {/* <Preloader /> */}
-          <div>Loading...</div>
-        </ImageLoader>
-        {/* <img
-          src={picture}
-          alt="screenshot of application"
-          className="single-image"
-        /> */}
-        {link && (
-          <a href={link} target="_blank">
-            See it deployed
-          </a>
-        )}
+        <Carousel
+          showThumbs={false}
+          autoPlay={true}
+          infiniteLoop={true}
+          showStatus={false}
+          // width="50vw"
+        >
+          {carouselImages}
+        </Carousel>
       </div>
     );
 
@@ -147,24 +141,24 @@ export default class Single extends Component {
       <div>
         <hr />
         {media < snapSize ? (
-          <div className="single">
+          <div className="carousel-single">
             <h3>{title}</h3>
             <div className="flex-column">
-              {divImage}
+              {divCarousel}
               {divText}
             </div>
           </div>
         ) : (
-          <div className="single">
+          <div className="carousel-single">
             <h2>{title}</h2>
             {this.props.backward ? (
               <div className="flex-row">
                 {divText}
-                {divImage}
+                {divCarousel}
               </div>
             ) : (
               <div className="flex-row">
-                {divImage}
+                {divCarousel}
                 {divText}
               </div>
             )}
@@ -174,10 +168,3 @@ export default class Single extends Component {
     );
   }
 }
-
-Single.propTypes = {
-  // title:
-  // image:
-  // placeholder:
-  // text:
-};
