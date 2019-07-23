@@ -51,72 +51,51 @@ export default class Projects extends React.Component {
       <div className="project">
         <Hero imageClassName="heroImg1" heroText={heroText[1]} />
 
-        <div className="title-bar">
-          <h2>Blockchain</h2>
-          <p>
-            With all the hype in late 2017, I just had to learn first hand what
-            this blockchain stuff was all about. My biggest takeaways:
-            Blockchain technologies have the potential to add value, but are
-            just another microservice and need to be part of an architecture
-            that can utilize what they have to offer. Smart contracts are easy
-            to write, but there is a lot to consider about security
-            vunerabilities, gas fees, and updating the contracts. That is, you
-            really want to spend the time and get it 100% right before deploying
-            a contract to a mainnet.
-          </p>
-        </div>
-        <Single
-          id={0}
-          title="Cryptocurrency Payment Gateway"
-          image={Image7}
-          placeholder={placeholder}
-          text={projectText[7]}
-        />
-        <VideoSingle
-          id={0}
-          title="BookLocal"
-          videoM4a={strings.videoM4a2}
-          // videoWebm={strings.videoWebm1}
-          image={Image6}
-          hoverMessage="Watch the demo video"
-          placeholder={placeholder}
-          link={strings.link6}
-          text={projectText[6]}
-          backward={true}
-        />
+      <TitleBar category="Hackathons" description={projectText.hackathons} />
+
+      {/* EthNewYork */}
+
+      {/* Ethereal Virtual */}
+
+      <CarouselSingle
+        id={0}
+        title="EthDenver 2019"
+        images={[bufficorn, smsDiagram, foodTruck]}
+        text={projectText.ethDenver}
+        backward={true}
+      />
+
+      <CarouselSingle
+        id={1}
+        title="WyoHackathon 2018"
+        images={[wyoRoom, wyoTable, dcc, wyoPitch, wyoStage]}
+        text={projectText.wyoHackathon}
+        // backward={true}
+      />
+      {/* EthMemphis */}
 
         <Hero imageClassName="iron-yard-glass" />
 
-        <TitleBar
-          category="The Iron Yard"
-          description="The Iron Yard is a 12-week coding boot camp specializing
-            in highly focused, immersive training centered on language fluency,
-            object-oriented programming, and project-based learning. Team
-            projects using GitHub, Trello, and an Agile methodology. There was a
-             final project that took an additional month. My two biggest
-             takaways were learning how to Google my way through any problem and
-              getting use to writing code for 60 hours a week."
-        />
-        <VideoSingle
-          id={1}
-          title="EZ-Tour"
-          videoM4a={strings.videoM4a1}
-          videoWebm={strings.videoWebm1}
-          image={Image1}
-          hoverMessage="See our presentation from demo day"
-          placeholder={placeholder}
-          link={strings.link1}
-          text={projectText[1]}
-          gitHub={strings.gitHub1}
-        />
-        <Single
-          id={1}
-          title="Slack-overflow"
-          image={Image2}
-          placeholder={placeholder}
-          link={strings.link2}
-          text={projectText[2]}
-          gitHub={strings.gitHub2}
+      <TitleBar
+        category="Practice Projects"
+        description={projectText.practiceProjects}
+      />
+
+      <Single
+        id={2}
+        title="Contract Visualizer"
+        image={contractVis}
+        text={projectText.contractVis}
+        link={links.contractVis}
+        gitHub={links.contractVisGithub}
+        backward={true}
+      />
+      {/* web assembly */}
+      {/* <Single
+          id={3}
+          title="Fractals in Web Assembly"
+          image={contractVis}
+          text={projectText.fractals}
           backward={true}
         />
         <Single
@@ -129,32 +108,7 @@ export default class Projects extends React.Component {
           gitHub={strings.gitHub3}
         />
 
-        <Hero imageClassName="heroImg2" />
-
-        <TitleBar
-          category="Back End Projects"
-          description={strings.description2}
-        />
-        <Single
-          id={3}
-          title="Code snippet organizer"
-          image={Image4}
-          placeholder={placeholder}
-          text={projectText[4]}
-          gitHub={strings.gitHub4}
-          backward={true}
-        />
-        <Single
-          id={4}
-          title="LinkedIn for Robots"
-          image={Image5}
-          placeholder={placeholder}
-          text={projectText[5]}
-          gitHub={strings.gitHub5}
-        />
-      </div>
-    );
-  }
+      {/* Memory game */}
+    </div>
+  );
 }
-
-Projects.propTypes = {};

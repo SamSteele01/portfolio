@@ -130,26 +130,88 @@
 .project {
   z-index: 3;
 }
-.blockchain-image {
-  background-image: url('heroImages/blockchain.jpg');
+@media (min-device-width: 370px) and (max-device-width: 667px) {
+  .blockchain-image {
+    background-image: url('heroImages/blockchain-375-cw90.jpg');
+    background-position: center;
+    background-position: top;
+    background-size: cover;
+    height: 670px;
+  }
+  .eos-sf-pano {
+    background-image: url('heroImages/eos-sf-pano-480.jpg');
+    background-position: center;
+  }
+  .react-code-screen {
+    background-image: url('heroImages/react-code-atom-480.png');
+    background-position: center;
+    background-size: cover;
+    height: 400px;
+  }
+  .iron-yard-glass {
+    background-image: url('heroImages/iron-yard-glass-480.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 640px;
+  }
 }
-.eos-sf-pano {
-  background-image: url('heroImages/eos-sf-pano.jpeg');
-  background-position: center;
+@media screen only (min-device-width: 370px) and (max-device-width: 667px) {
+  .blockchain-image {
+    background-image: url('heroImages/blockchain-375-cw90.jpg');
+    background-position: center;
+    background-position: top;
+    background-size: cover;
+    height: 670px;
+  }
+  .eos-sf-pano {
+    background-image: url('heroImages/eos-sf-pano-480.jpg');
+    background-position: center;
+  }
+  .react-code-screen {
+    background-image: url('heroImages/react-code-atom-480.png');
+    background-position: center;
+    background-size: cover;
+    height: 400px;
+  }
+  .iron-yard-glass {
+    background-image: url('heroImages/iron-yard-glass-480.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 640px;
+  }
+}
+@media (min-device-width: 667px) {
+  .hero-img {
+    height: 92vh;
+  }
+  .blockchain-image {
+    background-image: url('heroImages/blockchain.jpg');
+    background-position: center;
+    background-attachment: fixed;
+  }
+  .eos-sf-pano {
+    background-image: url('heroImages/eos-sf-pano.jpeg');
+    background-position: center;
+    background-attachment: fixed;
+  }
+  .react-code-screen {
+    background-image: url('heroImages/react-code-atom.png');
+    background-position: center;
+    background-attachment: fixed;
+  }
+  .iron-yard-glass {
+    background-image: url('heroImages/iron-yard-glass.jpg');
+    background-position: center;
+    background-attachment: fixed;
+  }
 }
 .heroImg3 {
   background-image: url('heroImages/IMG_0206.jpg');
 }
-.iron-yard-glass {
-  background-image: url('heroImages/IMG_0138.jpg');
-  background-position: center;
-}
 .hero-img {
-  height: 92vh;
   width: 100vw;
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
   z-index: 1;
   display: table-cell;
   vertical-align: middle;
@@ -165,7 +227,6 @@
 .pano-image {
   width: 100%;
   height: auto;
-  margin-left: -20px;
 }
 .title-bar {
   height: auto;
@@ -409,6 +470,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding-inline-start: 0;
 }
 .skills-container .skill-list .skill {
   width: 100px;

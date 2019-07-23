@@ -15,6 +15,15 @@ export default class Hero extends Component {
       </div>
     );
   }
+  return (
+    <div
+      // style={{ height: heroHeight + 'vh' }}
+      className={`hero-img ${imageClassName}`}
+    >
+      {/* <p className="hero-text">{this.props.heroText}</p> */}
+      <p className="pixeled-text">{heroText}</p>
+    </div>
+  );
 }
 
 Hero.propTypes = {
