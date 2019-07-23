@@ -61,6 +61,12 @@ export default function Projects() {
         text={projectText.booklocal}
       />
 
+      <img
+        src={eosHackathonImage}
+        alt="screenshot of application"
+        className="pano-image"
+      />
+
       <TitleBar category="Hackathons" description={projectText.hackathons} />
 
       {/* EthNewYork */}
@@ -75,25 +81,6 @@ export default function Projects() {
         backward={true}
       />
 
-      <CarouselSingle
-        id={1}
-        title="WyoHackathon 2018"
-        images={[wyoRoom, wyoTable, dcc, wyoPitch, wyoStage]}
-        text={projectText.wyoHackathon}
-        // backward={true}
-      />
-      {/* EthMemphis */}
-
-      <TitleBar category="Hackathons" description="uh ..." />
-      {/* EthDenver */}
-      <CarouselSingle
-        id={0}
-        title="EthDenver 2019"
-        images={[bufficorn, smsDiagram, foodTruck]}
-        text={projectText.ethDenver}
-        backward={true}
-      />
-      {/* WyoHackathon */}
       <CarouselSingle
         id={1}
         title="WyoHackathon 2018"
