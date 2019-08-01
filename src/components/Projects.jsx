@@ -20,6 +20,7 @@ import Image3 from '../styles/projectImages/etsy.png';
 // import Image5 from '../styles/projectImages/robot-linkedin.png';
 import Image6 from '../styles/projectImages/logo.png';
 import Image7 from '../styles/projectImages/Payment-gateway.png';
+import MGFlames from '../styles/projectImages/memory-game-flames.png';
 
 import eosHackathonImage from '../styles/heroImages/eos-sf-pano2.jpg';
 import bufficorn from '../styles/hackathonImages/bufficorn.jpeg';
@@ -149,7 +150,15 @@ export default function Projects() {
         gitHub={links.gitHub3}
       />
 
-      {/* Memory game */}
+      <Single
+        id={5}
+        title="Memory Game"
+        image={MGFlames}
+        link={links.ghPagesMemoryGame}
+        text={projectText.memoryGame}
+        gitHub={links.gitHubMemoryGame}
+        backward={true}
+      />
     </div>
   );
 }
