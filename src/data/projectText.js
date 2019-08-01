@@ -108,5 +108,8 @@ const projectText = {
     takaways were learning how to Google my way through any problem and \
     getting use to writing code for 60 hours a week. The following are \
     the team projects that I helped build.',
+  memoryGame: [
+    'We build this in our second week. We were learning about DOM manipulation with Javascript. Getting the game logic to work and using Javascript instead of CSS for the card flipping animation were part of the requirements. The Zelda hearts in the "tries" meter was extra credit. I have since gone back and added the dropdown selects that allow for different themes and sizes.',
+  ],
 };
 export default projectText;

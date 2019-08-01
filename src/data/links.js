@@ -15,8 +15,9 @@ export const links = {
     'https://github.com/TIY-Durham-Etsy-project/Etsy-group-project/tree/master',
   gitHub4: 'https://github.com/SamSteele01/Robot-LinkedIn',
   gitHub5: 'https://github.com/SamSteele01/Code-snippet-organizer',
-  gitHub6: 'https://github.com/SamSteele01/memory-game',
+  gitHubMemoryGame: 'https://github.com/SamSteele01/memory-game',
   gitHub7: 'https://github.com/SamSteele01/Week-one-project',
   contractVis: 'http://contract-visualizer.s3-website-sa-east-1.amazonaws.com/',
   contractVisGithub: 'https://github.com/SamSteele01/contract-visualizer',
+  ghPagesMemoryGame: 'https://samsteele01.github.io/memory-game/',
 };
