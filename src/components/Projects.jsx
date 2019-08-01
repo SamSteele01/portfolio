@@ -20,6 +20,7 @@ import Image3 from '../styles/projectImages/etsy.png';
 // import Image5 from '../styles/projectImages/robot-linkedin.png';
 import Image6 from '../styles/projectImages/logo.png';
 import Image7 from '../styles/projectImages/Payment-gateway.png';
+import MGFlames from '../styles/projectImages/memory-game-flames.png';
 
 import eosHackathonImage from '../styles/heroImages/eos-sf-pano2.jpg';
 import bufficorn from '../styles/hackathonImages/bufficorn.jpeg';
@@ -67,8 +68,12 @@ export default function Projects() {
         className="pano-image"
       />
 
-      <TitleBar category="Hackathons" description="uh ..." />
-      {/* EthDenver */}
+      <TitleBar category="Hackathons" description={projectText.hackathons} />
+
+      {/* EthNewYork */}
+
+      {/* Ethereal Virtual */}
+
       <CarouselSingle
         id={0}
         title="EthDenver 2019"
@@ -76,7 +81,7 @@ export default function Projects() {
         text={projectText.ethDenver}
         backward={true}
       />
-      {/* WyoHackathon */}
+
       <CarouselSingle
         id={1}
         title="WyoHackathon 2018"
@@ -92,7 +97,7 @@ export default function Projects() {
         category="Practice Projects"
         description={projectText.practiceProjects}
       />
-      {/* contract visualizer */}
+
       <Single
         id={2}
         title="Contract Visualizer"
@@ -145,27 +150,15 @@ export default function Projects() {
         gitHub={links.gitHub3}
       />
 
-      {/* <Hero imageClassName="heroImg2" />
-
-        <TitleBar
-          category="Back End Projects"
-          description={links.description2}
-        />
-        <Single
-          id={3}
-          title="Code snippet organizer"
-          image={Image4}
-          text={projectText[4]}
-          gitHub={links.gitHub4}
-          backward={true}
-        />
-        <Single
-          id={4}
-          title="LinkedIn for Robots"
-          image={Image5}
-          text={projectText[5]}
-          gitHub={links.gitHub5}
-        /> */}
+      <Single
+        id={5}
+        title="Memory Game"
+        image={MGFlames}
+        link={links.ghPagesMemoryGame}
+        text={projectText.memoryGame}
+        gitHub={links.gitHubMemoryGame}
+        backward={true}
+      />
     </div>
   );
 }

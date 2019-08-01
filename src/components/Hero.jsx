@@ -14,7 +14,7 @@ export default function Hero({ imageClassName, heroText, height }) {
   }
   return (
     <div
-      style={{ height: heroHeight + 'vh' }}
+      // style={{ height: heroHeight + 'vh' }}
       className={`hero-img ${imageClassName}`}
     >
       {/* <p className="hero-text">{this.props.heroText}</p> */}

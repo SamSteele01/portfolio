@@ -1,6 +1,15 @@
 const projectText = {
   blockchain:
-    'One of the hot topics in computer science right now, and has a lower barrier of entry than many of the others. Blockchain technology has many use cases and the list is still growing. A lot of what is possible has a humanitarian undercurrent. It is great to be able to feel that my work is contributing to change for the greater good. I have always loved a challenge. Web 3.0 add the concepts of decentralization, peer to peer transactions, and cryptography to the already rich ecosystem of web 2.0. With this combination arises problems that have never been solved before. It is uncharted waters where there is a chance to be the first to solve a problem or come up with the best solution for a problem. ',
+    'One of the hot topics in computer science right now, and has a lower barrier \
+     of entry than many of the others. Blockchain technology has many use cases \
+     and the list is still growing.  There is a lot of hype and speculation, but \
+     also the potential to drastically shift how the world deals with money and \
+     objects of value. Some of what is possible has a humanitarian undercurrent. \
+     Web 3.0 brings the concepts of decentralization, peer to peer transactions, \
+     and self executing contracts. The core pieces and ideas are not that \
+     complicated, but solving scaling issues and integrating with existing tech \
+     has forced the creation of lots of new technologies. It is neat to see how \
+     far the industry has come in 2 years. ',
   ezTour: [
     'My final project at The Iron Yard. Two front end devs and two back end \
     devs given two weeks to plan, create, and deploy a functional web site. The \
@@ -76,6 +85,8 @@ const projectText = {
     'The assignment was to create a wallet that would demonstrate how a wallet would work for a proposed new stable token on Ethereum. Having just attended EthDenver, I chose to modify Austin Griffith’s burner wallet. When the page loads, if you don’t have MetaMask, it creates a wallet that persists until local storage is cleared. If you do have MetaMask it uses the selected account.',
     'Well, as they say “Hell is other peoples code.” This project affirmed how much time is saved when code is linted and has proper comments. I was able to make the necessary changes and deliver a working wallet that can send and receive Eth and Dai tokens.',
   ],
+  hackathons:
+    'Cool to see what can be build from scratch in 40 hours or less. I love the intensity. To see how little sleep you need. To touch on all of the aspects of a proof of concept: finding a good idea, architecting, designing, front and back end development, sometimes devops, and creating a presentation.',
   ethDenver: [
     'The main theme of the event was Impact. That is, take this technology and make something that will help make peoples lives better. One of the first talks of the event mentioned that half of the developing world don’t have cell phones, and of those who do about 2/3 are voice and text only.',
     'We chose to build a project that would allow interaction with a blockchain with a text message ( SMS ). The proof of concept was to get a text message to interact with a smart contract on Ethereum. We used Twillio to get to this done quickly, then in true hackathon fashion, we attempted to add as many bounties as we could to the project. As it evolved, we found that this project wasn’t a single DApp, but rather the start of a protocol that could allow interaction with any blockchain or API service. We won three bounties with this project.',
@@ -97,5 +108,8 @@ const projectText = {
     takaways were learning how to Google my way through any problem and \
     getting use to writing code for 60 hours a week. The following are \
     the team projects that I helped build.',
+  memoryGame: [
+    'We build this in our second week. We were learning about DOM manipulation with Javascript. Getting the game logic to work and using Javascript instead of CSS for the card flipping animation were part of the requirements. The Zelda hearts in the "tries" meter was extra credit. I have since gone back and added the dropdown selects that allow for different themes and sizes.',
+  ],
 };
 export default projectText;
