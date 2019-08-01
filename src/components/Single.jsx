@@ -1,4 +1,7 @@
 import React, { Component, PropTypes } from 'react';
+
+import placeholder from '../styles/projectImages/responsive-design-dark-blue.png';
+
 const snapSize = 750;
 
 export default class Single extends Component {
@@ -14,6 +17,15 @@ export default class Single extends Component {
     };
     this.handledropdown = this.handledropdown.bind(this);
     this.setMedia = this.setMedia.bind(this);
+  }
+
+  componentDidMount() {
+    this.setMedia();
+    window.addEventListener('resize', this.setMedia);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.setMedia);
   }
 
   setMedia() {
@@ -41,11 +53,6 @@ export default class Single extends Component {
     }
   }
 
-  componentDidMount() {
-    this.setMedia();
-    window.addEventListener('resize', this.setMedia);
-  }
-
   handledropdown(event) {
     event.preventDefault();
     if (this.state.dropdownclassname === 'text-container-full') {
@@ -64,7 +71,7 @@ export default class Single extends Component {
   render() {
     let media = this.state.windowWidth;
 
-    const { title, image, placeholder, link, text, gitHub } = this.props;
+    const { title, image, link, text, gitHub } = this.props;
 
     let picture = '';
     if (image) {
@@ -84,7 +91,7 @@ export default class Single extends Component {
     }
 
     let divImage = (
-      <div className="flex-column">
+      <div className="image-container flex-column">
         <img
           src={picture}
           alt="screenshot of application"

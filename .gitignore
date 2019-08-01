@@ -9,6 +9,9 @@
 # production
 /build
 
+# source images
+/src/styles/hex-src
+
 # misc
 .DS_Store
 .env.local
