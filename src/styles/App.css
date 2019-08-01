@@ -154,7 +154,7 @@
 .project {
   z-index: 3;
 }
-@media (min-device-width: 370px) and (max-device-width: 667px) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
   .blockchain-image {
     background-image: url('heroImages/blockchain-375-cw90.jpg');
     background-position: center;
@@ -168,32 +168,7 @@
   }
   .react-code-screen {
     background-image: url('heroImages/react-code-atom-480.png');
-    background-position: center;
-    background-size: cover;
-    height: 400px;
-  }
-  .iron-yard-glass {
-    background-image: url('heroImages/iron-yard-glass-480.jpg');
-    background-position: center;
-    background-size: cover;
-    height: 640px;
-  }
-}
-@media screen only (min-device-width: 370px) and (max-device-width: 667px) {
-  .blockchain-image {
-    background-image: url('heroImages/blockchain-375-cw90.jpg');
-    background-position: center;
-    background-position: top;
-    background-size: cover;
-    height: 670px;
-  }
-  .eos-sf-pano {
-    background-image: url('heroImages/eos-sf-pano-480.jpg');
-    background-position: center;
-  }
-  .react-code-screen {
-    background-image: url('heroImages/react-code-atom-480.png');
-    background-position: center;
+    background-position: left;
     background-size: cover;
     height: 400px;
   }
@@ -270,24 +245,24 @@
   z-index: 5;
   color: #222c35;
 }
+.single-image {
+  height: auto;
+  max-width: 90vw;
+}
 @media (min-width: 480px) {
   .single {
     padding: 1rem;
   }
-  .single img {
+  .single-image {
     height: 54vw;
     width: 90vw;
   }
 }
 @media (min-width: 750px) {
-  .single img {
+  .single-image {
     height: auto;
     width: 100%;
   }
-}
-.single-image {
-  height: auto;
-  max-width: 90vw;
 }
 .flex-row {
   display: flex;
@@ -326,6 +301,18 @@
   .image-container {
     width: 50vw;
   }
+}
+.link-icon {
+  width: 42px;
+  height: 30px;
+  margin-bottom: -9px;
+  display: inline;
+}
+.github-icon {
+  width: 24px;
+  height: 24px;
+  margin: 0 12px -6px 0;
+  display: inline;
 }
 .video-wrapper {
   position: relative;

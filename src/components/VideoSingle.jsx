@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-// import placeholder from '../styles/responsive-design-dark-blue.png';
+import linkIcon from '../styles/icons/link-icon.svg';
+import gitHubIcon from '../styles/icons/gitHub-icon.svg';
+
 const snapSize = 750;
 
 export default class VideoSingle extends Component {
@@ -159,6 +161,7 @@ export default class VideoSingle extends Component {
         </div>
         {link && (
           <a href={link} target="_blank">
+            <img src={linkIcon} className="link-icon" />
             See it deployed
           </a>
         )}
@@ -179,6 +182,7 @@ export default class VideoSingle extends Component {
         )}
         {gitHub && (
           <a href={gitHub} target="_blank">
+            <img src={gitHubIcon} className="github-icon" />
             See the code on GitHub
           </a>
         )}

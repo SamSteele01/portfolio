@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import ImageLoader from 'react-load-image';
 
 import placeholder from '../styles/projectImages/responsive-design-dark-blue.png';
+import linkIcon from '../styles/icons/link-icon.svg';
+import gitHubIcon from '../styles/icons/gitHub-icon.svg';
 
 const snapSize = 750;
 
@@ -117,6 +119,7 @@ export default class Single extends Component {
         /> */}
         {link && (
           <a href={link} target="_blank">
+            <img src={linkIcon} className="link-icon" />
             See it deployed
           </a>
         )}
@@ -137,6 +140,7 @@ export default class Single extends Component {
         )}
         {gitHub && (
           <a href={gitHub} target="_blank">
+            <img src={gitHubIcon} className="github-icon" />
             See the code on GitHub
           </a>
         )}
